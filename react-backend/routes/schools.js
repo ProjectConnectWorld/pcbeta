@@ -1,5 +1,5 @@
-// import config from '../../../../pcConfig.js';
-var config = require('../../../../pcConfig.js')
+// import config from '../config.js';
+var config = require('../../../pcConfig.js')
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');

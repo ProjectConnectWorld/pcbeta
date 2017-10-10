@@ -1,0 +1,157 @@
+.left-mod {
+  position: absolute;
+  width: 12%;
+  height: 85vh;
+  left: 2%;
+  z-index: 1000;
+}
+
+.left-mod .piechart {
+  margin: 3% 3% 0 3%;
+  margin-top: 5%;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 100%;
+}
+.left-mod .piechart .piecontainer  {
+  height: 27vh;
+  width: auto;
+  position: relative;
+
+
+}
+.left-mod .piechart .legend{
+  display: inline-flex;
+  color: white;
+  font-size: 1vmin;
+  padding-bottom: 10px;
+  padding: 1% 1% 1% 3%;;
+
+}
+ul{
+  -webkit-padding-start: 0px;
+}
+
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 3px; }
+.legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+/* your colors */
+.legend .greater { background-color: #228B22; }
+.legend .less { background-color: #FFFF00; }
+.legend .noconn { background-color: #F94B4B; }
+
+
+
+.left-mod .piechart canvas {
+  display: block;
+  padding-top: 4%;
+}
+
+.left-mod .dynamic {
+  margin: 3%;
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 100%
+}
+.left-mod .content {
+  display: inline-block !important;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.left-mod .label {
+  color: #F5A623;
+  text-align: center;
+  font-size: 1.8vmin;
+}
+.right-mod .label {
+  color: #F5A623;
+  text-align: center;
+  font-size: 1.8vmin;
+}
+
+.left-mod #chart {
+  margin: 0 auto;
+  z-index: 10000000000000000;
+}
+
+.left-mod svg {
+  display: block;
+  float: left;
+}
+
+.info {
+  text-align: center;
+  text-overflow: visible;
+  padding-top: 1%
+}
+
+.contentval {
+  color: #F5A623;
+  text-align: left;
+  font-size: 2.2vmin;
+}
+
+.contentlabel {
+  color: white;
+  font-size: 1.2vmin;
+  text-align: left;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.eld {
+  padding: 3% 0 5% 5%;
+}
+
+.dist {
+  text-align: center !important;
+  color: white;
+  font-size: 2.2vmin;
+}
+.fainfo{
+  z-index: 10000000000000;
+  text-align: right;
+
+}
+.infoc{
+  margin: 3%%;
+  text-align: right;
+  padding: 2% 5%  0 0;
+  font-size: 1.6vmin !important;
+
+}
+
+.infoc2{
+  font-size: 1.6vmin !important;
+  margin: 3%%;
+  text-align: right;
+  padding: 2% 5%  0 0;
+
+}
+
+
+.left-mod .toggles{
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  margin: 3%;
+  margin-top: 5%;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  width: 100%;
+
+}
+
+.left-mod .toggles label{
+  font-size: 1.8vmin;
+  text-align: center;
+  margin: 2%;
+}

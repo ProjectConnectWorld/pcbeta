@@ -17,6 +17,7 @@
 // module.exports = router;
 var express = require('express');
 var router = express.Router();
+console.log("IN USER.JS");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

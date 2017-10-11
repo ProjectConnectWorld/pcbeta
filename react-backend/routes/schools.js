@@ -10,6 +10,7 @@ const magicbox_url = config.magicbox_url;
 const refreshToken = config.refreshToken;
 const rfUrl = config.rfUrl;
 
+console.log("IN SCHOOLS.JS");
 
 function getResponse(url, token, res) {
   Request
@@ -59,7 +60,7 @@ function getNewToken(url, rfToken) {
 }
 
 const forward_get = (req, res, next) => {
-  console.log("here");
+  console.log("FORWARD_GET");
   console.log(magicbox_url);
   console.log(req.originalUrl);
   const url = `${magicbox_url}${req.originalUrl}`

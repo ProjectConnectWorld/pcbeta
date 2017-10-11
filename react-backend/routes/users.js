@@ -21,6 +21,7 @@ console.log("IN USER.JS");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  console.log("IN USER GET");
   // Comment out this line:
   //res.send('respond with a resource');
 

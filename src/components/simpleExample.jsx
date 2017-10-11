@@ -8,9 +8,6 @@ import {
   GeoJSON,
   LayersControl,
 } from 'react-leaflet'
-// import {
-//   bindActionCreators
-// } from 'redux';
 import {
   connect
 } from 'react-redux';

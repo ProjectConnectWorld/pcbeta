@@ -6,10 +6,10 @@ const SliderChanged = (value, geoJson) => {
   var noData = 0;
 
   for (var i = 0; i < geoJson.features.length; i++) {
-    if (geoJson.features[i].properties.speed_connectivity == null) {
+    if (geoJson.features[i].properties.speed_connectivity === null) {
       noData++;
 
-    } else if (geoJson.features[i].properties.speed_connectivity == 0) {
+    } else if (geoJson.features[i].properties.speed_connectivity === 0) {
       nconn++;
 
     } else if (geoJson.features[i].properties.speed_connectivity < value) {

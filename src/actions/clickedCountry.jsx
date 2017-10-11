@@ -39,10 +39,10 @@ export function ClickedCountry(country, sliderVal) {
 
 
         for (var i = 0; i < schoolcount; i++) {
-          if (geojson.features[i].properties.speed_connectivity == null) {
+          if (geojson.features[i].properties.speed_connectivity === null) {
             noData++;
 
-          } else if (geojson.features[i].properties.speed_connectivity == 0) {
+          } else if (geojson.features[i].properties.speed_connectivity === 0) {
             nconn++;
 
           } else if (geojson.features[i].properties.speed_connectivity < sliderVal) {
@@ -55,40 +55,40 @@ export function ClickedCountry(country, sliderVal) {
             totalconnectedschools++;
           }
 
-          if (geojson.features[i].properties.num_teachers != null) {
+          if (geojson.features[i].properties.num_teachers !== null) {
             totalteachers += geojson.features[i].properties.num_teachers;
           }
-          if (geojson.features[i].properties.num_students != null) {
+          if (geojson.features[i].properties.num_students !== null) {
             totalstudents += geojson.features[i].properties.num_students;
           }
-          if (geojson.features[i].properties.electricity != null) {
+          if (geojson.features[i].properties.electricity !== null) {
             totalelec++;
           }
-          if (geojson.features[i].properties.speed_connectivity != null) {
+          if (geojson.features[i].properties.speed_connectivity !== null) {
             totalspeed += geojson.features[i].properties.speed_connectivity;
           }
         }
         var avgspeed = Math.round(100 * (totalspeed / schoolcount)) / 100;
 
-        if (totalteachers == 0) {
+        if (totalteachers === 0) {
           totalteachers = "-";
         }
-        if (avgspeed == 0) {
+        if (avgspeed === 0) {
           avgspeed = "-";
         }
-        if (schoolcount == 0) {
+        if (schoolcount === 0) {
           schoolcount = "-";
         }
-        if (totalstudents == 0) {
+        if (totalstudents === 0) {
           totalstudents = "-";
         }
-        if (totalconnectedschools == 0) {
+        if (totalconnectedschools === 0) {
           totalconnectedschools = "-";
         }
-        if (totalteachers == 0) {
+        if (totalteachers === 0) {
           totalteachers = "-";
         }
-        if (totalelec == 0) {
+        if (totalelec === 0) {
           totalelec = "-";
         }
         if (totalconnectedschools / schoolcount > .4) {

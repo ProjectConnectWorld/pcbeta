@@ -50,7 +50,7 @@ class SimpleExample extends Component {
 
 
   getStyle = (value, type) => {
-    console.log(type);
+    //console.log(type);
     if (this.props.countrySelected.showSpeed) {
       if (value === null) {
         return "#DCDCDC";
@@ -62,14 +62,14 @@ class SimpleExample extends Component {
         return "#F5A623";
       }
     } else {
-      console.log("GGGS");
+      //console.log("GGGS");
       if (type === null) {
         return "#DCDCDC";
       } else if (type === "No Service") {
         return "#d9534f";
       } else if (type === "3G") {
         return "#5cb85c";
-      } else if (type == "2G") {
+      } else if (type === "2G") {
         return "#F5A623";
       }
 
@@ -112,14 +112,14 @@ class SimpleExample extends Component {
       'mouseover': (e) => {
         var alpha2 = alpha3ToAlpha2(feature.id);
         //console.log(alpha2);
-        if (this.props.countrySelected.country != alpha2 && (allCountries.indexOf(alpha2) > -1)) {
+        if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
           layer.setStyle({
             fillColor: "#F5A623",
             fillOpacity: 0.7
           });
 
         }
-        if (this.props.countrySelected.country == alpha2) {
+        if (this.props.countrySelected.country === alpha2) {
           layer.setStyle({
             fillOpacity: 0
           });
@@ -135,7 +135,7 @@ class SimpleExample extends Component {
             fillOpacity: .2
           })
         }
-        if (this.props.countrySelected.country == alpha2) {
+        if (this.props.countrySelected.country === alpha2) {
           layer.setStyle({
             fillOpacity: 0
           });
@@ -145,7 +145,7 @@ class SimpleExample extends Component {
       'click': (e) => {
         //console.log(e.target.feature);
         var alpha2 = alpha3ToAlpha2(e.target.feature.id);
-        if ((allCountries.indexOf(alpha2) > -1) && alpha2 != this.props.countrySelected.country) {
+        if ((allCountries.indexOf(alpha2) > -1) && alpha2 !== this.props.countrySelected.country) {
           console.log("Calling: " + alpha2);
           this.props.clickedCountry(alpha2, this.props.sliderData.value);
           //this.props.sliderChanged(this.props.sliderData.value, this.props.countrySelected.geojson);

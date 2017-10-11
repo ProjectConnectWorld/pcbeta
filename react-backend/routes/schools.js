@@ -1,5 +1,5 @@
 // import config from '../config.js';
-var config = require('../../../pcConfig.js')
+var config = require('../config.js')
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
@@ -65,12 +65,6 @@ const forward_get = (req, res, next) => {
   const url = `${magicbox_url}${req.originalUrl}`
   console.info(`FORWARD GET: magicbox ${url}`)
   getResponse(url, acToken, res);
-
-
-
-
-
-
 }
 
 /* GET users listing. */

@@ -9,9 +9,7 @@ import {
 } from 'react-redux';
 import './leftPanel.css'
 import PieExample from './pie';
-import {
-  ClickedCountry
-} from '../actions/clickedCountry';
+
 
 class LeftPanel extends Component {
 

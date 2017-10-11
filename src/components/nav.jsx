@@ -4,7 +4,6 @@ import React, {
 
 import {
   Navbar,
-  Nav
 } from 'react-bootstrap';
 import './nav.css';
 import logo from '../data/pc.png'

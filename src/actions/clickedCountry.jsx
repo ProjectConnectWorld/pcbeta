@@ -15,7 +15,7 @@ export function ClickedCountry(country, sliderVal) {
     console.log(api_url + '/schools/countries/' + country);
     var config = {
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Content - Type, Accept '
       }
     };

@@ -14,15 +14,15 @@ export function ClickedCountry(country, sliderVal) {
     console.log('About to fetch', country);
     console.log(api_url + '/schools/countries/' + country);
     axios.defaults.withCredentials = true;
-    // var config = {
-    //   headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   }
-    // };
-    axios.get(api_url + '/schools/countries/' + country)
+    var config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        // 'Accept': 'application/json',
+        // 'Content-Type': 'application/json',
+      }
+    };
+    axios.get(api_url + '/schools/countries/' + country, config)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })

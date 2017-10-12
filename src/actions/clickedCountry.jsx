@@ -21,7 +21,7 @@ export function ClickedCountry(country, sliderVal) {
         'Content-Type': 'application/json',
       }
     };
-    axios.get(api_url + '/schools/countries/' + country)
+    axios.get(api_url + '/schools/countries/' + country, config)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })

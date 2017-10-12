@@ -4,13 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var cors = require('cors')
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var schools = require('./routes/schools');
 var app = express();
+var cors = require('cors')
 
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -25,12 +27,13 @@ console.log(bodyParser.json());
 //   next();
 // });
 
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT ,DELETE, OPTION');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-  next();
-});
+
+// app.use(function(req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT ,DELETE, OPTION');
+//   res.header('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+//   next();
+// });
 
 
 app.use(cors())

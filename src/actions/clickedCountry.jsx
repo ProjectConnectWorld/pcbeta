@@ -16,8 +16,7 @@ export function ClickedCountry(country, sliderVal) {
     var config = {
       headers: {
         'Access-Control-Allow-Origin': '*'
-        'Access-Control-Allow-Headers': Content - Type,
-        Accept
+        'Access-Control-Allow-Headers': 'Content - Type, Accept '
       }
     };
     axios.get(api_url + '/schools/countries/' + country, config)

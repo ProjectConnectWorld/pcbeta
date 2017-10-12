@@ -42,7 +42,7 @@ app.all('*', function(req, res, next) {
 });
 
 
-app.use(cors())
+//app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false

@@ -13,13 +13,13 @@ export function ClickedCountry(country, sliderVal) {
   return function(dispatch) {
     console.log('About to fetch', country);
     console.log(api_url + '/schools/countries/' + country);
-    var config = {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content - Type, Accept '
-      }
-    };
-    axios.get(api_url + '/schools/countries/' + country, config)
+    // var config = {
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Headers': 'Content - Type, Accept'
+    //   }
+    // };
+    axios.get(api_url + '/schools/countries/' + country)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })

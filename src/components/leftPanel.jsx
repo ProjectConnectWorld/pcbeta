@@ -8,7 +8,7 @@ import {
   connect
 } from 'react-redux';
 import './leftPanel.css'
-import PieExample from './pie';
+import ChoosePie from './choosePie';
 
 
 class LeftPanel extends Component {
@@ -63,7 +63,7 @@ class LeftPanel extends Component {
         </div>
         <div className="piechart  " id="piechart">
           <div className="piecontainer">
-            <PieExample />
+            <ChoosePie  />
           </div>
         </div>
         {/* <div className="toggles ">

@@ -13,7 +13,7 @@ import VerticalSlider from './verticalSlider';
 class RightPanel extends Component {
 
   render() {
-    if (this.props.countrySelected.totalconnectedschools / this.props.countrySelected.schoolcount > .4) {
+    if (this.props.countrySelected.showSpeed) {
       return (
         <div className="right-mod">
           <div className="label">

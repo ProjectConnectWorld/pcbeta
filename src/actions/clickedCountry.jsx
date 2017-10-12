@@ -34,6 +34,10 @@ export function ClickedCountry(country, sliderVal) {
         var aconn = 0;
         var noData = 0;
         var showSpeed = false;
+        var b_nconn = 0;
+        var b_2gconn = 0;
+        var b_3gconn = 0;
+        var b_noData = 0;
 
 
 
@@ -43,16 +47,33 @@ export function ClickedCountry(country, sliderVal) {
 
           } else if (geojson.features[i].properties.speed_connectivity === 0) {
             nconn++;
+            totalconnectedschools++;
 
           } else if (geojson.features[i].properties.speed_connectivity < sliderVal) {
             bconn++;
+            totalconnectedschools++;
 
           } else if (geojson.features[i].properties.speed_connectivity >= sliderVal) {
             aconn++;
-          }
-          if (geojson.features[i].properties.speed_connectivity > 0) {
             totalconnectedschools++;
           }
+          ///GGGG Connectivity
+          if (geojson.features[i].properties.type_connectivity === null) {
+            b_noData++;
+
+          } else if (geojson.features[i].properties.type_connectivity === "No Service") {
+            b_nconn++;
+
+          } else if (geojson.features[i].properties.type_connectivity === "2G") {
+            b_2gconn++;
+
+          } else if (geojson.features[i].properties.type_connectivity === "3G") {
+            b_3gconn++;
+          }
+
+          // if (geojson.features[i].properties.type_connectivity >= 0) {
+          //   totalconnectedschools++;
+          // }
 
           if (geojson.features[i].properties.num_teachers !== null) {
             totalteachers += geojson.features[i].properties.num_teachers;
@@ -90,9 +111,11 @@ export function ClickedCountry(country, sliderVal) {
         if (totalelec === 0) {
           totalelec = "-";
         }
-        if (totalconnectedschools / schoolcount > .4) {
+        if (totalconnectedschools / schoolcount > .3) {
           showSpeed = true;
         }
+        console.log("showSpeed");
+        console.log(showSpeed);
         //console.log(Object.getOwnPropertyNames(response));
         console.log(geojson.features.length);
         dispatch({
@@ -109,6 +132,10 @@ export function ClickedCountry(country, sliderVal) {
             totalelec: totalelec,
             avgspeed: avgspeed,
             showSpeed: showSpeed,
+            b_nconn: b_nconn,
+            b_2gconn: b_2gconn,
+            b_3gconn: b_3gconn,
+            b_noData: b_noData,
 
           }
         })

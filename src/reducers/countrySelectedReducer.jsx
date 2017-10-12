@@ -14,6 +14,10 @@ var initialstate = {
   belowConn: 0,
   aboveCnn: 0,
   noData: 0,
+  b_nconn: 0,
+  b_2gconn: 0,
+  b_3gconn: 0,
+  b_noData: 0,
 
 }
 

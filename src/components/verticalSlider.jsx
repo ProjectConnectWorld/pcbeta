@@ -2,7 +2,7 @@ import React, {
   Component
 } from 'react'
 import Slider from 'react-rangeslider'
-import 'react-rangeslider/lib/index2.css';
+import 'react-rangeslider/lib/index.css';
 
 
 import {

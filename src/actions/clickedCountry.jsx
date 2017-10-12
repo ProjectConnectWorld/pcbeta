@@ -13,7 +13,12 @@ export function ClickedCountry(country, sliderVal) {
   return function(dispatch) {
     console.log('About to fetch', country);
     console.log(api_url + '/schools/countries/' + country);
-    axios.get(api_url + '/schools/countries/' + country)
+    var config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+    axios.get(api_url + '/schools/countries/' + country, config)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })

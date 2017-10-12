@@ -16,7 +16,7 @@ export function ClickedCountry(country, sliderVal) {
     var config = {
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content - Type, Accept',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       }

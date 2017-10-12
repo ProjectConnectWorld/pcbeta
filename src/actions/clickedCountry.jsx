@@ -14,7 +14,7 @@ export function ClickedCountry(country, sliderVal) {
     console.log('About to fetch', country);
     console.log(api_url + '/schools/countries/' + country);
     axios.defaults.withCredentials = true;
-    axios.get(api_url + '/schools/countries/' + country)
+    axios.get('/schools/countries/' + country)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })

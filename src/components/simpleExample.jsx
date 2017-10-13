@@ -26,6 +26,9 @@ import L from 'leaflet';
 import popUpString from './helperComponent';
 import allCountries from '../data/allCountryInfo.js';
 
+
+
+
 var _ = require('lodash');
 
 class SimpleExample extends Component {
@@ -169,15 +172,9 @@ class SimpleExample extends Component {
       this.props.mapData.lat,
       this.props.mapData.lng
     ]
-    // const style = {
-    //   fill: true,
-    //   fillColor: "#F5A623",
-    //   fillOpacity: 0,
-    //   stroke: false,
-    // }
+
     if (this.props.countrySelected) {
-      //console.log("blah: " + this.props.countrySelected.geojson);
-      //console.log(this.props.countrySelected);
+
       return (
         <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
           <ZoomControl position="bottomleft" />

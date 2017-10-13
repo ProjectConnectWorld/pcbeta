@@ -50,7 +50,8 @@ class Alert extends Component {
             connectivity. We are always looking for more partners to validate (and add!) to our existing
             datasets. Please contact
             <a href= "mailto:info@projectconnect.world?Subject=More%20Information">  Project Connect </a>
-            
+            to learn more.
+
           </Modal.Body>
           <Modal.Footer>
 

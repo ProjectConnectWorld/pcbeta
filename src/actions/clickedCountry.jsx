@@ -1,18 +1,14 @@
 import axios from 'axios';
-import {
-  getName
-} from 'i18n-iso-countries';
 
-//var config = require('../config.js');
-//var api_url = config.api_url;
-var api_url = 'http://localhost:3000';
+var iso3311a2 = require('iso-3166-1-alpha-2')
+
 
 export function ClickedCountry(country, sliderVal) {
   console.log("YOU CLICKED ON COUNTRY: ", country);
 
   return function(dispatch) {
     console.log('About to fetch', country);
-    console.log(api_url + '/schools/countries/' + country);
+    //console.log(api_url + '/schools/countries/' + country);
     axios.defaults.withCredentials = true;
     axios.get('/schools/countries/' + country)
       .catch(err => {
@@ -21,7 +17,7 @@ export function ClickedCountry(country, sliderVal) {
       .then(response => {
         //console.log(country, 'Fetched!');
 
-        var countryname = getName(country, "en");
+        var countryname = iso3311a2.getCountry(country)
         var geojson = response.data.result;
         var geojsoncount = response.data.count;
         var schoolcount = geojson.features.length
@@ -39,6 +35,10 @@ export function ClickedCountry(country, sliderVal) {
         var b_2gconn = 0;
         var b_3gconn = 0;
         var b_noData = 0;
+        console.log(countryname);
+        console.log(countryname);
+        console.log(countryname);
+        console.log(countryname);
 
 
 

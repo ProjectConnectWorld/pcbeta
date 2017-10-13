@@ -40,7 +40,7 @@ class PieExample2 extends Component {
         'Zero Connectivity',
         '3G',
         '2G',
-        '0G'
+        'No Connectivity Data'
       ],
       datasets: [{
         data: [this.props.countrySelected.b_nconn, this.props.countrySelected.b_3gconn, this.props.countrySelected.b_2gconn, this.props.countrySelected.b_noData],

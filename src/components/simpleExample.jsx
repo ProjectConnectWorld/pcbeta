@@ -44,7 +44,7 @@ class SimpleExample extends Component {
     });
   }
   centerCountry = (latlng) => {
-    this.refs.map.leafletElement.flyTo(latlng, 6);
+    this.refs.map.leafletElement.flyTo(latlng, 5);
   }
 
 

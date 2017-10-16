@@ -13,13 +13,15 @@ import {
 } from 'redux'
 
 import SliderChanged from '../actions/sliderChanged';
+import LoadSpinner from '../actions/loadSpinner';
 
 class VerticalSlider extends Component {
 
   handleChange = (value) => {
-    console.log("T");
-    console.log(this.props.countrySelected.geojson);
+    this.props.loadSpinner(this.props.loadingData.load);
     this.props.sliderChanged(value, this.props.countrySelected.geojson);
+    console.log("DONE WITH SLIDER INTERACTION");
+
 
   }
 
@@ -59,14 +61,15 @@ class VerticalSlider extends Component {
 
 function mapStateToProps(state) {
   return {
-    countrySelected: state.countrySelected,
     sliderData: state.sliderChanged,
+    loadingData: state.loadingChanged
   }
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-    sliderChanged: SliderChanged
+    sliderChanged: SliderChanged,
+    loadSpinner: LoadSpinner
   }, dispatch)
 }
 

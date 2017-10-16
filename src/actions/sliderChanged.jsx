@@ -19,10 +19,10 @@ const SliderChanged = (value, geoJson) => {
       aconn++;
     }
   }
-  console.log(nconn);
-  console.log(bconn);
-  console.log(aconn);
-  console.log(noData);
+  // console.log(nconn);
+  // console.log(bconn);
+  // console.log(aconn);
+  // console.log(noData);
 
   return {
     type: "SLIDER_CHANGED",

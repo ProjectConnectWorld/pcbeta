@@ -22,6 +22,7 @@ import {
   ClickedCountry
 } from '../actions/clickedCountry';
 import SliderChanged from '../actions/sliderChanged';
+import LoadSpinner from '../actions/loadSpinner';
 import L from 'leaflet';
 import popUpString from './helperComponent';
 import allCountries from '../data/allCountryInfo.js';
@@ -30,8 +31,12 @@ import allCountries from '../data/allCountryInfo.js';
 
 
 var _ = require('lodash');
+var toLoad = false;
+var toLoadCount = 0;
 
 class SimpleExample extends Component {
+
+
 
 
   highlightFeature = (e) => {
@@ -147,9 +152,12 @@ class SimpleExample extends Component {
         var alpha2 = alpha3ToAlpha2(e.target.feature.id);
         if ((allCountries.indexOf(alpha2) > -1) && alpha2 !== this.props.countrySelected.country) {
           console.log("Calling: " + alpha2);
-          this.props.clickedCountry(alpha2, this.props.sliderData.value);
-          //this.props.sliderChanged(this.props.sliderData.value, this.props.countrySelected.geojson);
+          this.props.loadSpinner(true);
           this.centerCountry(e.latlng);
+          this.props.clickedCountry(alpha2, this.props.sliderData.value);
+          toLoad = true;
+          //this.props.sliderChanged(this.props.sliderData.value, this.props.countrySelected.geojson);
+
         }
 
         console.log(e);
@@ -166,7 +174,20 @@ class SimpleExample extends Component {
     }).bindPopup(popUpString(feature.properties)); // Change marker to circle
   }
 
+  componentDidMount = () => {
+    console.log("MOUNTED!");
 
+  }
+  componentDidUpdate = (prevProps, prevState) => {
+    toLoadCount++;
+    if (toLoad && toLoadCount > 2) {
+      console.log("UPDATED!");
+      this.props.loadSpinner(false);
+      toLoadCount = 0;
+      toLoad = false;
+    }
+
+  }
   render() {
     const position = [
       this.props.mapData.lat,
@@ -174,7 +195,6 @@ class SimpleExample extends Component {
     ]
 
     if (this.props.countrySelected) {
-
       return (
         <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
           <ZoomControl position="bottomleft" />
@@ -197,25 +217,23 @@ class SimpleExample extends Component {
                 attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
             </LayersControl.BaseLayer>
-          </LayersControl >
+            </LayersControl >
 
+            <GeoJSON
+              data={GeoJsonV}
+              style={this.styleMe.bind(this)}
+              onEachFeature= {this.onEachFeature.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              key={_.uniqueId()}
+              data= {this.props.countrySelected.geojson}
+              pointToLayer={this.pointToLayer.bind(this)}
+            ></GeoJSON>
+            {/* { renderCountries( this.props.countrySelected.geojson, this.state.sliderValue ) }
+            */}
 
+          </Map>
 
-
-          <GeoJSON
-            data={GeoJsonV}
-            style={this.styleMe.bind(this)}
-            onEachFeature= {this.onEachFeature.bind(this)}
-          ></GeoJSON>
-          <GeoJSON
-            key={_.uniqueId()}
-            data= {this.props.countrySelected.geojson}
-            pointToLayer={this.pointToLayer.bind(this)}
-          ></GeoJSON>
-          {/* { renderCountries( this.props.countrySelected.geojson, this.state.sliderValue ) }
-          */}
-
-        </Map>
       )
 
     } else {
@@ -246,13 +264,15 @@ function mapStateToProps(state) {
     mapData: state.mapData.mapInit,
     countrySelected: state.countrySelected,
     sliderData: state.sliderChanged,
+    loadingData: state.loadingChanged
   }
 }
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     clickedCountry: ClickedCountry,
-    sliderChanged: SliderChanged
+    sliderChanged: SliderChanged,
+    loadSpinner: LoadSpinner
   }, dispatch)
 }
 

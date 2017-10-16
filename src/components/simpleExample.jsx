@@ -26,18 +26,17 @@ import LoadSpinner from '../actions/loadSpinner';
 import L from 'leaflet';
 import popUpString from './helperComponent';
 import allCountries from '../data/allCountryInfo.js';
-
-
-
+//import MarkerClusterGroup from 'react-leaflet-markercluster';
+//import ClusterLayer from 'react-leaflet-cluster-layer';
+import {
+  GeoJsonCluster
+} from 'react-geojson-cluster';
 
 var _ = require('lodash');
 var toLoad = false;
 var toLoadCount = 0;
 
 class SimpleExample extends Component {
-
-
-
 
   highlightFeature = (e) => {
     var layer = e.target;
@@ -187,37 +186,84 @@ class SimpleExample extends Component {
       toLoad = false;
     }
 
+
   }
   render() {
+
     const position = [
       this.props.mapData.lat,
       this.props.mapData.lng
     ]
-
     if (this.props.countrySelected) {
-      return (
-        <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
-          <ZoomControl position="bottomleft" />
-          <LayersControl position='bottomright'>
-            <LayersControl.BaseLayer name='Black And White' checked >
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-            </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name='Satellite'>
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-            </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name='Streets'>
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-            </LayersControl.BaseLayer>
-            </LayersControl >
+      if (this.props.countrySelected.country === 'BR' && this.props.countrySelected.geojson) {
+        console.log("HERE");
+        console.log(this.props.countrySelected.geojson);
+        return (
+          <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
+            <ZoomControl position="bottomleft" />
+            <LayersControl position='bottomright'>
+              <LayersControl.BaseLayer name='Black And White' checked >
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Satellite'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Streets'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+            </LayersControl>
+            <GeoJSON
+              data={GeoJsonV}
+              style={this.styleMe.bind(this)}
+              onEachFeature= {this.onEachFeature.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              key={_.uniqueId()}
+              data= {this.props.countrySelected.geojson}
+              pointToLayer={this.pointToLayer.bind(this)}
+            ></GeoJSON>
+            {/* <GeoJsonCluster data={this.props.countrySelected.geojson} />
+            */}
+
+
+
+            </Map>
+
+        )
+
+      } else {
+        return (
+          <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
+            <ZoomControl position="bottomleft" />
+            <LayersControl position='bottomright'>
+              <LayersControl.BaseLayer name='Black And White' checked >
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Satellite'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Streets'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+            </LayersControl>
 
             <GeoJSON
               data={GeoJsonV}
@@ -229,12 +275,16 @@ class SimpleExample extends Component {
               data= {this.props.countrySelected.geojson}
               pointToLayer={this.pointToLayer.bind(this)}
             ></GeoJSON>
-            {/* { renderCountries( this.props.countrySelected.geojson, this.state.sliderValue ) }
-            */}
 
-          </Map>
+              {/* { renderCountries( this.props.countrySelected.geojson, this.state.sliderValue ) }
+              */}
 
-      )
+            </Map>
+
+        )
+
+      }
+
 
     } else {
       return (

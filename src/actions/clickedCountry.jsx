@@ -82,7 +82,7 @@ export function ClickedCountry(country, sliderVal) {
           if (geojson.features[i].properties.num_students !== null) {
             totalstudents += geojson.features[i].properties.num_students;
           }
-          if (geojson.features[i].properties.electricity !== null) {
+          if (geojson.features[i].properties.electricity !== null && geojson.features[i].properties.electricity === true) {
             totalelec++;
           }
           if (geojson.features[i].properties.speed_connectivity !== null) {

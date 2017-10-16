@@ -13,7 +13,10 @@ import ChoosePie from './choosePie';
 
 class LeftPanel extends Component {
 
+
+
   render() {
+
     return (
       <div className="left-mod">
         <div className="label">
@@ -25,27 +28,27 @@ class LeftPanel extends Component {
           <div className="content">
             {/* <!-- Schools --> */}
             <div className="schools eld">
-              <p className="contentval" id="nschools">{this.props.countrySelected.schoolcount}</p>
+              <p className="contentval" id="nschools">{this.props.countrySelected.schoolcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               <p className="contentlabel">SCHOOLS</p>
             </div>
             {/* <!-- Connected Schools --> */}
             <div className="schools eld">
-              <p className="contentval" id="cschools">{this.props.countrySelected.totalconnectedschools}</p>
+              <p className="contentval" id="cschools">{this.props.countrySelected.totalconnectedschools.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               <p className="contentlabel">CONNECTED_SCHOOLS</p>
             </div>
             {/* <!-- Students --> */}
             <div className="students eld">
-              <p className="contentval" id="nstudents">{this.props.countrySelected.totalstudents}</p>
+              <p className="contentval" id="nstudents">{this.props.countrySelected.totalstudents.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               <p className="contentlabel">STUDENTS</p>
             </div>
             {/* <!-- Teachers --> */}
             <div className="teachers eld">
-              <p className="contentval" id="nteachers">{this.props.countrySelected.totalteachers}</p>
+              <p className="contentval" id="nteachers">{this.props.countrySelected.totalteachers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               <p className="contentlabel">TEACHERS</p>
             </div>
             {/* <!-- connSchools --> */}
             <div className="classNamerooms eld">
-              <p className="contentval" id="nclassNamerooms">{this.props.countrySelected.totalelec}</p>
+              <p className="contentval" id="nclassNamerooms">{this.props.countrySelected.totalelec.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               <p className="contentlabel">SCHOOLS_WITH_ELECTRICITY</p>
             </div>
             {/* <!-- avgMbps --> */}

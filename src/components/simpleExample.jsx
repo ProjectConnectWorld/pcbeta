@@ -28,9 +28,9 @@ import popUpString from './helperComponent';
 import allCountries from '../data/allCountryInfo.js';
 //import MarkerClusterGroup from 'react-leaflet-markercluster';
 //import ClusterLayer from 'react-leaflet-cluster-layer';
-import {
-  GeoJsonCluster
-} from 'react-geojson-cluster';
+// import {
+//   GeoJsonCluster
+// } from 'react-geojson-cluster';
 
 var _ = require('lodash');
 var toLoad = false;

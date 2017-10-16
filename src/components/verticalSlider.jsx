@@ -62,7 +62,8 @@ class VerticalSlider extends Component {
 function mapStateToProps(state) {
   return {
     sliderData: state.sliderChanged,
-    loadingData: state.loadingChanged
+    loadingData: state.loadingChanged,
+    countrySelected: state.countrySelected,
   }
 }
 

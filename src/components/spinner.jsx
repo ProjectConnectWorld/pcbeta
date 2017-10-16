@@ -28,7 +28,7 @@ class Spinner extends Component {
     if (this.props.loadingData.load) {
       return (
         <Spin
-          name="folding-cube"
+          name="ball-scale-multiple"
           className ="spinner"
           color="#F5A623"
         />

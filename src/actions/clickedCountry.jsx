@@ -10,6 +10,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
   if (admin1 !== null) {
     extra = '?admin1=' + admin1;
     stateName = bStates[admin1];
+    console.log(stateName);
   }
 
   return function(dispatch) {

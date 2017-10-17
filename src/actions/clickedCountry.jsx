@@ -1,5 +1,5 @@
 import axios from 'axios';
-import bStates from '..data/brazilStates'
+import bStates from '../data/brazilStates'
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
 

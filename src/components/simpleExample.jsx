@@ -115,6 +115,13 @@ class SimpleExample extends Component {
     return true;
   }
 
+  geoFilter2 = (feature) => {
+    if (feature.properties.UF === this.props.countrySelected.admin1) {
+      return false;
+    }
+    return true;
+  }
+
 
 
   onEachFeature = (feature, layer) => {
@@ -307,6 +314,7 @@ class SimpleExample extends Component {
             key={_.uniqueId()}
             data= {this.props.countrySelected.geojson}
             pointToLayer={this.pointToLayer.bind(this)}
+            filter = {this.geoFilter2.bind(this)}
             ></GeoJSON>
           {/* <HeatmapLayer
             fitBoundsOnLoad

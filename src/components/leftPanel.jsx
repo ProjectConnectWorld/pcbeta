@@ -16,11 +16,16 @@ class LeftPanel extends Component {
 
 
   render() {
+    var fullname = "";
+    if (this.props.countrySelected.adminName != null) {
+      fullname = ", this.props.countrySelected.adminName "
+    }
+
 
     return (
       <div className="left-mod">
         <div className="label">
-          {this.props.countrySelected.countryname} {this.props.countrySelected.adminName} Attributes
+          {this.props.countrySelected.countryname} {fullname} Attributes
         </div>
         <div className="dynamic">
 

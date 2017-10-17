@@ -50,7 +50,7 @@ function getNewToken(url, rfToken) {
     .get(url + rfToken)
     .end(function(err, resp) {
       if (err || !resp.ok) {
-        console.log('Oh no! error');
+        console.log('getting new token');
       } else {
         acToken = JSON.parse(resp.text)["access_token"];
         console.log(acToken);

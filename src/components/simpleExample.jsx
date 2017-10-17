@@ -96,9 +96,20 @@ class SimpleExample extends Component {
       fillOpacity: 0,
       stroke: false,
     }
+    const style2 = {
+      fill: true,
+      fillColor: "#F5A623",
+      fillOpacity: .2,
+      stroke: false,
+    }
     var alpha2 = alpha3ToAlpha2(geoJsonFeature.id);
     if (allCountries.indexOf(alpha2) > -1) {
-      return style;
+      if (alpha2 === "MR" || alpha === "BR") {
+        return style2;
+      } else {
+        return style;
+      }
+
     } else {
       return style1;
     }

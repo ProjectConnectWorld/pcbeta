@@ -98,29 +98,40 @@ class SimpleExample extends Component {
     }
     var alpha2 = alpha3ToAlpha2(geoJsonFeature.id);
     if (allCountries.indexOf(alpha2) > -1) {
-      //console.log(alpha2);
       return style;
     } else {
       return style1;
     }
   }
 
+  styleMe2 = (geoJsonFeature) => {
+    //var layer = e.target;
+    const style = {
+      fill: true,
+      fillColor: "#DCDCDC",
+      fillOpacity: .2,
+      stroke: false,
+    }
+
+    return style;
+
+  }
+
 
   geoFilter = (feature) => {
     var alpha2 = alpha3ToAlpha2(feature.id);
     if (alpha2 === 'BR') {
-      console.log("BRAZIL GEOJSON");
       return false;
     }
     return true;
   }
 
-  geoFilter2 = (feature) => {
-    if (feature.properties.UF === this.props.countrySelected.admin1) {
-      return false;
-    }
-    return true;
-  }
+  // geoFilter2 = (feature) => {
+  //   if (feature.properties.UF === this.props.countrySelected.admin1) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
 
 
@@ -128,7 +139,6 @@ class SimpleExample extends Component {
     layer.on({
       'mouseover': (e) => {
         var alpha2 = alpha3ToAlpha2(feature.id);
-        //console.log(alpha2);
         if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
           layer.setStyle({
             fillColor: "#F5A623",
@@ -308,14 +318,13 @@ class SimpleExample extends Component {
           <GeoJSON
             data={BrazilGeo}
             onEachFeature= {this.onEachFeature2.bind(this)}
-            style={styleBR}
+            style={this.styleMe2.nbind(this)}
           ></GeoJSON>
           <GeoJSON
-            key={_.uniqueId()}
+            key={_.uniqueId()}s
             data= {this.props.countrySelected.geojson}
             pointToLayer={this.pointToLayer.bind(this)}
-            filter = {this.geoFilter2.bind(this)}
-            ></GeoJSON>
+          ></GeoJSON>
           {/* <HeatmapLayer
             fitBoundsOnLoad
             fitBoundsOnUpdate

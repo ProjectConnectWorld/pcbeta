@@ -3,6 +3,7 @@ var initialstate = {
   geojson: null,
   geojsoncount: null,
   admin1: null,
+  adminName: null,
   countryname: "Country",
   schoolcount: "-",
   totalconnectedschools: "-",

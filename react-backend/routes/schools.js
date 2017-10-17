@@ -5,8 +5,8 @@ var router = express.Router();
 var fetch = require('node-fetch');
 const Request = require('superagent');
 
-//var acToken = "KE0GE1Zg1hPaE6AR";
-var acToken = "FygK7TUXvSFmaB1M0TcPeVc4yESlMoOA";
+var acToken = "KE0GE1Zg1hPaE6AR";
+// var acToken = "FygK7TUXvSFmaB1M0TcPeVc4yESlMoOA";
 const magicbox_url = config.magicbox_url;
 const refreshToken = config.refreshToken;
 const rfUrl = config.rfUrl;

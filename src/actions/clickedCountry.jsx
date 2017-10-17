@@ -1,13 +1,15 @@
 import axios from 'axios';
-
+import bStates from '..data/brazilStates'
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
 
 export function ClickedCountry(country, sliderVal, admin1) {
   console.log("YOU CLICKED ON COUNTRY: ", country);
   var extra = ""
+  var stateName = ""
   if (admin1 !== null) {
-    extra = '?admin1=' + admin1
+    extra = '?admin1=' + admin1;
+    stateName = bStates[admin1];
   }
 
   return function(dispatch) {
@@ -20,7 +22,6 @@ export function ClickedCountry(country, sliderVal, admin1) {
       })
       .then(response => {
         //console.log(country, 'Fetched!');
-
         var countryname = iso3311a2.getCountry(country)
         var geojson = response.data.result;
         var geojsoncount = response.data.count;
@@ -131,6 +132,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
             geojson: geojson,
             geojsoncount: geojsoncount,
             admin1: admin1,
+            adminName: stateName,
             countryname: countryname,
             schoolcount: schoolcount,
             totalconnectedschools: totalconnectedschools,

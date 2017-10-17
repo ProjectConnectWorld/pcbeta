@@ -9,7 +9,7 @@ import {
   LayersControl,
   ImageOverlay,
 } from 'react-leaflet'
-import HeatmapLayer from 'react-leaflet-heatmap-layer'
+// import HeatmapLayer from 'react-leaflet-heatmap-layer'
 import {
   connect
 } from 'react-redux';

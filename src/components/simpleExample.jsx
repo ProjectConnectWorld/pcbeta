@@ -206,7 +206,7 @@ class SimpleExample extends Component {
           var alpha2 = 'BR'
           console.log("Calling: " + alpha2);
           this.props.loadSpinner(true);
-          this.centerCountry(e.latlng, 7);
+          this.centerCountry(e.latlng, 6);
           this.props.clickedCountry(alpha2, this.props.sliderData.value, admin1);
           toLoad = true;
         }

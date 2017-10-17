@@ -104,7 +104,7 @@ class SimpleExample extends Component {
     }
     var alpha2 = alpha3ToAlpha2(geoJsonFeature.id);
     if (allCountries.indexOf(alpha2) > -1) {
-      if (alpha2 === "MR" || alpha === "BR") {
+      if (alpha2 === "MR" || alpha2 === "BR") {
         return style2;
       } else {
         return style;

@@ -99,7 +99,7 @@ class SimpleExample extends Component {
     const style2 = {
       fill: true,
       fillColor: "#F5A623",
-      fillOpacity: .7,
+      fillOpacity: .5,
       stroke: false,
     }
     var alpha2 = alpha3ToAlpha2(geoJsonFeature.id);
@@ -120,7 +120,7 @@ class SimpleExample extends Component {
     const style = {
       fill: true,
       fillColor: "#F5A623",
-      fillOpacity: .7,
+      fillOpacity: .5,
       stroke: false,
     }
 
@@ -153,7 +153,7 @@ class SimpleExample extends Component {
         if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
           layer.setStyle({
             fillColor: "#F5A623",
-            fillOpacity: 0.7
+            fillOpacity: 0.8
           });
 
         }
@@ -168,10 +168,18 @@ class SimpleExample extends Component {
       'mouseout': (e) => {
         var alpha2 = alpha3ToAlpha2(feature.id);
         if ((allCountries.indexOf(alpha2) > -1)) {
-          layer.setStyle({
-            fillColor: "#DCDCDC",
-            fillOpacity: .2
-          })
+          if (alpha2 === 'MR') {
+            layer.setStyle({
+              fillColor: "#F5A623",
+              fillOpacity: .5
+            })
+          } else {
+            layer.setStyle({
+              fillColor: "#DCDCDC",
+              fillOpacity: .2
+            })
+          }
+
         }
         if (this.props.countrySelected.country === alpha2) {
           layer.setStyle({
@@ -204,7 +212,7 @@ class SimpleExample extends Component {
       'mouseover': (e) => {
         layer.setStyle({
           fillColor: "#F5A623",
-          fillOpacity: 0.7
+          fillOpacity: 0.8
         });
         if (this.props.countrySelected.admin1 === feature.properties.UF) {
           layer.setStyle({
@@ -216,8 +224,8 @@ class SimpleExample extends Component {
       },
       'mouseout': (e) => {
         layer.setStyle({
-          fillColor: "#DCDCDC",
-          fillOpacity: .2
+          fillColor: "#F5A623",
+          fillOpacity: .5
         })
         if (this.props.countrySelected.admin1 === feature.properties.UF) {
           layer.setStyle({

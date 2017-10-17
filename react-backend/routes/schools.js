@@ -54,7 +54,8 @@ function getNewToken(url, rfToken) {
       } else {
         console.log('HERE IS YOUR NEW Token');
         acToken = JSON.parse(resp.text)["access_token"];
-        console.log(acToken);
+        console.log("T: "
+          acToken);
       }
     });
 

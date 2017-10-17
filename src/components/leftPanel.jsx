@@ -20,7 +20,7 @@ class LeftPanel extends Component {
     return (
       <div className="left-mod">
         <div className="label">
-          {this.props.countrySelected.countryname} {this.props.countrySelected.admin1} Attributes
+          {this.props.countrySelected.countryname} {this.props.countrySelected.adminName} Attributes
         </div>
         <div className="dynamic">
 

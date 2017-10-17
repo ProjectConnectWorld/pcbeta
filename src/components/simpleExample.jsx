@@ -318,7 +318,7 @@ class SimpleExample extends Component {
           <GeoJSON
             data={BrazilGeo}
             onEachFeature= {this.onEachFeature2.bind(this)}
-            style={this.styleMe2.nbind(this)}
+            style={this.styleMe2.bind(this)}
           ></GeoJSON>
           <GeoJSON
             key={_.uniqueId()}s

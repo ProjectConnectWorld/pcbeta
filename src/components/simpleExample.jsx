@@ -99,7 +99,7 @@ class SimpleExample extends Component {
     const style2 = {
       fill: true,
       fillColor: "#F5A623",
-      fillOpacity: .2,
+      fillOpacity: .7,
       stroke: false,
     }
     var alpha2 = alpha3ToAlpha2(geoJsonFeature.id);
@@ -119,8 +119,8 @@ class SimpleExample extends Component {
     //var layer = e.target;
     const style = {
       fill: true,
-      fillColor: "#DCDCDC",
-      fillOpacity: .2,
+      fillColor: "#F5A623",
+      fillOpacity: .7,
       stroke: false,
     }
 

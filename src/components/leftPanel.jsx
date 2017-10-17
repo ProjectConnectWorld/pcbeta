@@ -18,7 +18,7 @@ class LeftPanel extends Component {
   render() {
     var fullname = "";
     if (this.props.countrySelected.adminName != null) {
-      fullname = ", this.props.countrySelected.adminName "
+      fullname = ", " + this.props.countrySelected.adminName
     }
 
 

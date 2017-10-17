@@ -372,7 +372,7 @@ class SimpleExample extends Component {
           <GeoJSON
             data={BrazilGeo}
             onEachFeature= {this.onEachFeature2.bind(this)}
-            style={styleBR}
+            style={this.styleMe2.bind(this)}
           ></GeoJSON>
         </Map>
       )

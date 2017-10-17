@@ -123,8 +123,20 @@ class SimpleExample extends Component {
       fillOpacity: .5,
       stroke: false,
     }
+    const style1 = {
+      fill: true,
+      fillColor: "#F5A623",
+      fillOpacity: 0,
+      stroke: false,
+    }
 
-    return style;
+
+    if (this.props.countrySelected.admin1 === geoJsonFeature.properties.UF) {
+      return style1;
+    } else {
+      return style;
+    }
+
 
   }
 
@@ -147,9 +159,14 @@ class SimpleExample extends Component {
 
 
   onEachFeature = (feature, layer) => {
+    var alpha2 = alpha3ToAlpha2(feature.id);
+    if (this.props.countrySelected.country === alpha2) {
+      layer.setStyle({
+        fillOpacity: 0
+      });
+    }
     layer.on({
       'mouseover': (e) => {
-        var alpha2 = alpha3ToAlpha2(feature.id);
         if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
           layer.setStyle({
             fillColor: "#F5A623",
@@ -208,6 +225,11 @@ class SimpleExample extends Component {
 
 
   onEachFeature2 = (feature, layer) => {
+    if (this.props.countrySelected.admin1 === feature.properties.UF) {
+      layer.setStyle({
+        fillOpacity: 0
+      });
+    }
     layer.on({
       'mouseover': (e) => {
         layer.setStyle({

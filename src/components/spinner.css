@@ -2,6 +2,9 @@
   z-index: 1000000000000000;
   left: 50vw;
   top: 40vh;
+  width: 55px !important;
+  height: 55px !important;
+
 
 
 }

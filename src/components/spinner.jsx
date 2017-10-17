@@ -28,7 +28,7 @@ class Spinner extends Component {
     if (this.props.loadingData.load) {
       return (
         <Spin
-          name="ball-scale-multiple"
+          name="circle"
           className ="spinner"
           color="#F5A623"
         />

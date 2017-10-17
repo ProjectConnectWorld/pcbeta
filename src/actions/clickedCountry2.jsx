@@ -3,24 +3,20 @@ import axios from 'axios';
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
 
-export function ClickedCountry(country, sliderVal, admin1) {
+export function ClickedCountry2(country, sliderVal, admin1) {
   console.log("YOU CLICKED ON COUNTRY: ", country);
-  var extra = ""
-  if (admin1 !== null) {
-    extra = '?admin1=' + admin1
-  }
 
   return function(dispatch) {
-    console.log('About to fetch', country + extra);
+    console.log('About to fetch', country);
     //console.log(api_url + '/schools/countries/' + country);
     axios.defaults.withCredentials = true;
-    axios.get('/schools/countries/' + country + extra)
+    axios.get('/schools/countries/' + country + '?admin1=' + admin1)
       .catch(err => {
         alert('There was an error trying to fetch', country)
       })
       .then(response => {
         //console.log(country, 'Fetched!');
-
+        console.log(response);
         var countryname = iso3311a2.getCountry(country)
         var geojson = response.data.result;
         var geojsoncount = response.data.count;
@@ -39,8 +35,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
         var b_2gconn = 0;
         var b_3gconn = 0;
         var b_noData = 0;
-        var avgspeed = 0;
-        console.log(geojson);
+        console.log(countryname);
         console.log(countryname);
         console.log(countryname);
         console.log(countryname);
@@ -130,7 +125,6 @@ export function ClickedCountry(country, sliderVal, admin1) {
             country: country,
             geojson: geojson,
             geojsoncount: geojsoncount,
-            admin1: admin1,
             countryname: countryname,
             schoolcount: schoolcount,
             totalconnectedschools: totalconnectedschools,

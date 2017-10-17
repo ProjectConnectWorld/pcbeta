@@ -53,7 +53,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
 
           } else if (geojson.features[i].properties.speed_connectivity === 0) {
             nconn++;
-            totalconnectedschools++;
+            // totalconnectedschools++;
 
           } else if (geojson.features[i].properties.speed_connectivity < sliderVal) {
             bconn++;

@@ -290,7 +290,7 @@ class SimpleExample extends Component {
       'click': (e) => {
         console.log(e);
         if (this.props.countrySelected.admin1 !== feature.properties.UF && this.props.countrySelected.country === 'BR') {
-          var admin1 = e.target.feature.id + 1;
+          var admin1 = e.target.feature.id;
           console.log(admin1);
           var alpha2 = 'BR'
           console.log("Calling: " + alpha2);

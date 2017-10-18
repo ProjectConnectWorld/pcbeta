@@ -2,7 +2,7 @@ var BrazilGeo = {
   "type": "FeatureCollection",
   "features": [{
       "type": "Feature",
-      "id": 0,
+      "id": 1,
       "properties": {
         "UF": "AC",
         "ESTADO": "Acre",
@@ -179,7 +179,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 1,
+      "id": 2,
       "properties": {
         "UF": "AL",
         "ESTADO": "Alagoas",
@@ -281,7 +281,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 2,
+      "id": 3,
       "properties": {
         "UF": "AP",
         "ESTADO": "Amapá",
@@ -573,7 +573,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 3,
+      "id": 4,
       "properties": {
         "UF": "AM",
         "ESTADO": "Amazonas",
@@ -1104,7 +1104,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 4,
+      "id": 5,
       "properties": {
         "UF": "BA",
         "ESTADO": "Bahia",
@@ -1753,7 +1753,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 5,
+      "id": 6,
       "properties": {
         "UF": "CE",
         "ESTADO": "Ceará",
@@ -1966,7 +1966,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 6,
+      "id": 7,
       "properties": {
         "UF": "DF",
         "ESTADO": "Distrito Federal",
@@ -2005,7 +2005,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 7,
+      "id": 8,
       "properties": {
         "UF": "ES",
         "ESTADO": "Espírito Santo",
@@ -2158,7 +2158,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 8,
+      "id": 9,
       "properties": {
         "UF": "GO",
         "ESTADO": "Goiás",
@@ -2618,7 +2618,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 9,
+      "id": 10,
       "properties": {
         "UF": "MA",
         "ESTADO": "Maranhão",
@@ -3202,7 +3202,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 10,
+      "id": 12,
       "properties": {
         "UF": "MT",
         "ESTADO": "Mato Grosso",
@@ -3977,7 +3977,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 12,
+      "id": 13,
       "properties": {
         "UF": "MG",
         "ESTADO": "Minas Gerais",
@@ -4541,7 +4541,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 13,
+      "id": 14,
       "properties": {
         "UF": "PA",
         "ESTADO": "Pará",
@@ -6052,7 +6052,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 14,
+      "id": 15,
       "properties": {
         "UF": "PB",
         "ESTADO": "Paraba",
@@ -6259,7 +6259,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 15,
+      "id": 16,
       "properties": {
         "UF": "PR",
         "ESTADO": "Paraná",
@@ -6683,7 +6683,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 16,
+      "id": 17,
       "properties": {
         "UF": "PE",
         "ESTADO": "Pernambuco",
@@ -6956,7 +6956,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 17,
+      "id": 18,
       "properties": {
         "UF": "PI",
         "ESTADO": "Piau",
@@ -7262,7 +7262,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 18,
+      "id": 19,
       "properties": {
         "UF": "RJ",
         "ESTADO": "Rio de Janeiro",
@@ -7581,7 +7581,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 19,
+      "id": 20,
       "properties": {
         "UF": "RN",
         "ESTADO": "Rio Grande do Norte",
@@ -7740,7 +7740,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 20,
+      "id": 21,
       "properties": {
         "UF": "RS",
         "ESTADO": "Rio Grande do Sul",
@@ -8159,7 +8159,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 21,
+      "id": 22,
       "properties": {
         "UF": "RO",
         "ESTADO": "Rondônia",
@@ -8477,7 +8477,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 22,
+      "id": 23,
       "properties": {
         "UF": "RR",
         "ESTADO": "Roraima",
@@ -8752,7 +8752,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 23,
+      "id": 25,
       "properties": {
         "UF": "SC",
         "ESTADO": "Santa Catarina",
@@ -9519,7 +9519,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 25,
+      "id": 26,
       "properties": {
         "UF": "SE",
         "ESTADO": "Sergipe",
@@ -9612,7 +9612,7 @@ var BrazilGeo = {
     },
     {
       "type": "Feature",
-      "id": 26,
+      "id": 27,
       "properties": {
         "UF": "TO",
         "ESTADO": "Tocantins",

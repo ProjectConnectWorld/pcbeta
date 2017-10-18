@@ -8,7 +8,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
   var extra = ""
   var stateName = ""
   if (admin1 !== null) {
-    extra = '?admin1=' + admin1;
+    extra = '?id_1=' + admin1;
     stateName = bStates[admin1];
     console.log(stateName);
   }

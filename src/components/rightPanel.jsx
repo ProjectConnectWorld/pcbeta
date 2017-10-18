@@ -13,7 +13,7 @@ import VerticalSlider from './verticalSlider';
 class RightPanel extends Component {
 
   render() {
-    if (this.props.countrySelected.showSpeed) {
+    if (this.props.countrySelected.showSpeed && this.props.countrySelected.country === 'BR' && this.props.countrySelected.admin1 != null) {
       return (
         <div className="right-mod">
           <div className="label">

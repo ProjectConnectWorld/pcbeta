@@ -120,7 +120,7 @@ class SimpleExample extends Component {
     const style = {
       fill: true,
       fillColor: "#F5A623",
-      fillOpacity: .5,
+      fillOpacity: 0,
       stroke: false,
     }
     const style1 = {
@@ -143,11 +143,40 @@ class SimpleExample extends Component {
 
   geoFilter = (feature) => {
     var alpha2 = alpha3ToAlpha2(feature.id);
-    if (alpha2 === 'BR') {
-      return false;
+    if (this.props.countrySelected.country === alpha2) {
+      return false
     }
-    return true;
+    return true
   }
+
+  pointFilter = (feature) => {
+    var rand = Math.random()
+    //console.log("IN PF");
+    //console.log(feature);
+    if (this.props.countrySelected.country === 'BR' && this.props.countrySelected.admin1 === null) {
+      //console.log(rand + " in BR");
+      if (rand > .85) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return true;
+    }
+
+
+  }
+  // showBrazilDist = (feature) => {
+  //   console.log("IN SBD");
+  //   if (this.props.countrySelected.country === 'BR') {
+  //     console.log("BR is selected should show dist");
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  //
+  //
+  // }
 
   // geoFilter2 = (feature) => {
   //   if (feature.properties.UF === this.props.countrySelected.admin1) {
@@ -232,10 +261,12 @@ class SimpleExample extends Component {
     }
     layer.on({
       'mouseover': (e) => {
-        layer.setStyle({
-          fillColor: "#F5A623",
-          fillOpacity: 0.8
-        });
+        if (this.props.countrySelected.country === 'BR') {
+          layer.setStyle({
+            fillColor: "#F5A623",
+            fillOpacity: 0.7
+          });
+        }
         if (this.props.countrySelected.admin1 === feature.properties.UF) {
           layer.setStyle({
             fillOpacity: 0
@@ -247,7 +278,7 @@ class SimpleExample extends Component {
       'mouseout': (e) => {
         layer.setStyle({
           fillColor: "#F5A623",
-          fillOpacity: .5
+          fillOpacity: 0
         })
         if (this.props.countrySelected.admin1 === feature.properties.UF) {
           layer.setStyle({
@@ -258,7 +289,7 @@ class SimpleExample extends Component {
       },
       'click': (e) => {
         console.log(e);
-        if (this.props.countrySelected.admin1 !== feature.properties.UF) {
+        if (this.props.countrySelected.admin1 !== feature.properties.UF && this.props.countrySelected.country === 'BR') {
           var admin1 = e.target.feature.properties.UF;
           console.log(admin1);
           var alpha2 = 'BR'
@@ -312,18 +343,14 @@ class SimpleExample extends Component {
       this.props.mapData.lat,
       this.props.mapData.lng
     ]
+
     const styleBR = {
       fill: true,
       fillColor: "#DCDCDC",
       fillOpacity: .2,
       stroke: false,
     }
-    const maxHeat = 15;
-    const gradient = {
-      0.1: '#d9534f',
-      0.5: '#F5A623',
-      1.0: '#5cb85c'
-    };
+
     if (this.props.countrySelected.geojson) {
       return (
         <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
@@ -360,27 +387,14 @@ class SimpleExample extends Component {
             data={BrazilGeo}
             onEachFeature= {this.onEachFeature2.bind(this)}
             style={this.styleMe2.bind(this)}
+            // filter={this.showBrazilDist.bind(this)}
           ></GeoJSON>
           <GeoJSON
             key={_.uniqueId()}s
             data= {this.props.countrySelected.geojson}
             pointToLayer={this.pointToLayer.bind(this)}
+            filter = {this.pointFilter.bind(this)}
           ></GeoJSON>
-          {/* <HeatmapLayer
-            fitBoundsOnLoad
-            fitBoundsOnUpdate
-            points={this.props.countrySelected.geojson.features}
-            longitudeExtractor={m => m.geometry.coordinates[0]}
-            latitudeExtractor={m => m.geometry.coordinates[1]}
-            intensityExtractor={m => parseFloat(m.properties.speed_connectivity)}
-            max= {maxHeat}
-            radius ={1}
-            minOpacity={.7}
-            gradient ={gradient}
-
-            //
-          /> */}
-
           </Map>
 
       )
@@ -409,16 +423,12 @@ class SimpleExample extends Component {
               />
             </LayersControl.BaseLayer>
           </LayersControl>
+
           <GeoJSON
             data={GeoJsonV}
             style={this.styleMe.bind(this)}
             onEachFeature= {this.onEachFeature.bind(this)}
             filter = {this.geoFilter.bind(this)}
-          ></GeoJSON>
-          <GeoJSON
-            data={BrazilGeo}
-            onEachFeature= {this.onEachFeature2.bind(this)}
-            style={this.styleMe2.bind(this)}
           ></GeoJSON>
         </Map>
       )

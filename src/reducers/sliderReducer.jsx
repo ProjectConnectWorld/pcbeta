@@ -1,5 +1,5 @@
 var initialstate = {
-  value: 0,
+  value: 3,
   noConn: 1,
   belowConn: 1,
   aboveConn: 1,

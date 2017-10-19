@@ -19,7 +19,7 @@ export function ClickedCountry(country, sliderVal, admin1) {
     axios.defaults.withCredentials = true;
     axios.get('/schools/countries/' + country + extra)
       .catch(err => {
-        alert('There was an error trying to fetch', country)
+        alert('There was an error trying to fetch. Please check your internet connection', country)
       })
       .then(response => {
         //console.log(country, 'Fetched!');

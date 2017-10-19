@@ -254,7 +254,7 @@ class SimpleExample extends Component {
 
 
   onEachFeature2 = (feature, layer) => {
-    if (this.props.countrySelected.admin1 === feature.properties.UF) {
+    if (this.props.countrySelected.admin1 === feature.id) {
       layer.setStyle({
         fillOpacity: 0
       });
@@ -267,7 +267,7 @@ class SimpleExample extends Component {
             fillOpacity: 0.7
           });
         }
-        if (this.props.countrySelected.admin1 === feature.properties.UF) {
+        if (this.props.countrySelected.admin1 === feature.id) {
           layer.setStyle({
             fillOpacity: 0
           });
@@ -280,7 +280,7 @@ class SimpleExample extends Component {
           fillColor: "#F5A623",
           fillOpacity: 0
         })
-        if (this.props.countrySelected.admin1 === feature.properties.UF) {
+        if (this.props.countrySelected.admin1 === feature.id) {
           layer.setStyle({
             fillOpacity: 0
           });
@@ -289,7 +289,7 @@ class SimpleExample extends Component {
       },
       'click': (e) => {
         console.log(e);
-        if (this.props.countrySelected.admin1 !== feature.properties.UF && this.props.countrySelected.country === 'BR') {
+        if (this.props.countrySelected.admin1 !== feature.id && this.props.countrySelected.country === 'BR') {
           var admin1 = e.target.feature.id;
           console.log(admin1);
           var alpha2 = 'BR'

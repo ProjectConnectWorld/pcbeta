@@ -24,9 +24,17 @@ export function ClickedCountry(country, sliderVal, admin1) {
       .then(response => {
         //console.log(country, 'Fetched!');
         var countryname = iso3311a2.getCountry(country)
-        var geojson = response.data.result;
-        var geojsoncount = response.data.count;
-        var schoolcount = geojson.features.length
+        var geojson = null;
+        var geojsoncount = null;
+        var schoolcount = null;
+
+        if (response === null) {
+          alert("Please reload page")
+        } else {
+          geojson = response.data.result;
+          geojsoncount = response.data.count;
+          schoolcount = geojson.features.length
+        }
         var totalteachers = 0;
         var totalstudents = 0;
         var totalelec = 0;
@@ -42,10 +50,10 @@ export function ClickedCountry(country, sliderVal, admin1) {
         var b_3gconn = 0;
         var b_noData = 0;
         var avgspeed = 0;
-        console.log(geojson);
-        console.log(countryname);
-        console.log(countryname);
-        console.log(countryname);
+        // console.log(geojson);
+        // console.log(countryname);
+        // console.log(countryname);
+        // console.log(countryname);
 
 
 
@@ -122,10 +130,10 @@ export function ClickedCountry(country, sliderVal, admin1) {
         if (totalconnectedschools / schoolcount > .3) {
           showSpeed = true;
         }
-        console.log("showSpeed");
-        console.log(showSpeed);
+        //console.log("showSpeed");
+        //console.log(showSpeed);
         //console.log(Object.getOwnPropertyNames(response));
-        console.log(geojson.features.length);
+        //console.log(geojson.features.length);
         dispatch({
           type: 'COUNTRY_FETCHED',
           payload: {

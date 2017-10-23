@@ -25,7 +25,8 @@ function getResponse(url, token, res) {
         getNewToken(rfUrl, refreshToken);
         getResponseError(url, acToken, res);
       } else {
-        console.log('yay got ' + JSON.parse(resp.text));
+        console.log('yay got ' + JSON.parse(resp.text) + cache.keys() + cache.size());
+        cache.put(url, resp.text, 90000000);
         res.json(JSON.parse(resp.text));
       }
     });
@@ -41,7 +42,7 @@ function getResponseError(url, token, res) {
         console.log(token);
         console.log('Error with new token');
       } else {
-        console.log('yay got ' + JSON.parse(resp.text));
+        console.log('yay got ' + JSON.parse(resp.text) + cache.keys() + cache.size());
         cache.put(url, resp.text, 90000000);
         res.json(JSON.parse(resp.text));
       }
@@ -70,6 +71,8 @@ const forward_get = (req, res, next) => {
   console.log(req.originalUrl);
   const url = `${magicbox_url}${req.originalUrl}`
   console.info(`FORWARD GET: magicbox ${url}`)
+  cache.put('foo', 'bar');
+  console.log(cache.get('foo'));
   if (cache.get(url)) {
     console.log("FROM CACHE");
     var cachedResp = cache.get(url)

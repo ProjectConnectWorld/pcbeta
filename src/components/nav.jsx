@@ -24,7 +24,7 @@ class Naver extends Component {
     return (
       <Navbar>
         <Navbar.Brand pullLeft>
-          <a href="#"><img src={logo} height= "110%" alt=""/></a>
+          <a href="http://projectconnect.world"><img src={logo} height= "110%" alt=""/></a>
         </Navbar.Brand>
         <Navbar.Brand pullRight className="nav2">
           <a href="#"><img src={logo2} height= "110%" alt=""/></a>

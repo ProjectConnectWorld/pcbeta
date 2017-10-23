@@ -214,7 +214,7 @@ class SimpleExample extends Component {
       'mouseout': (e) => {
         var alpha2 = alpha3ToAlpha2(feature.id);
         if ((allCountries.indexOf(alpha2) > -1)) {
-          if (alpha2 === 'MR') {
+          if (alpha2 === 'MR' || alpha2 === 'BR') {
             layer.setStyle({
               fillColor: "#F5A623",
               fillOpacity: .5

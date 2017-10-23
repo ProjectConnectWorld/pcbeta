@@ -4,6 +4,7 @@ var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 const Request = require('superagent');
+var cache = require('memory-cache');
 
 var acToken = "KE0GE1Zg1hPaE6AR";
 // var acToken = "FygK7TUXvSFmaB1M0TcPeVc4yESlMoOA";
@@ -41,6 +42,7 @@ function getResponseError(url, token, res) {
         console.log('Error with new token');
       } else {
         console.log('yay got ' + JSON.parse(resp.text));
+        cache.put(url, resp.text, 90000000);
         res.json(JSON.parse(resp.text));
       }
     });
@@ -68,8 +70,25 @@ const forward_get = (req, res, next) => {
   console.log(req.originalUrl);
   const url = `${magicbox_url}${req.originalUrl}`
   console.info(`FORWARD GET: magicbox ${url}`)
-  getResponse(url, acToken, res);
+  if (cache.get(url)) {
+    console.log("FROM CACHE");
+    var cachedResp = cache.get(url)
+    res.json(JSON.parse(cachedResp))
+  } else {
+    console.log("FROM API");
+    getResponse(url, acToken, res);
+  }
+  //getResponse(url, acToken, res);
 }
+// const forward_get = (req, res, next) => {
+//   //console.log(req);
+//   console.log("FORWARD_GET");
+//   console.log(magicbox_url);
+//   console.log(req.originalUrl);
+//   const url = `${magicbox_url}${req.originalUrl}`
+//   console.info(`FORWARD GET: magicbox ${url}`)
+//   getResponse(url, acToken, res);
+// }
 
 /* GET users listing. */
 router.get('/countries/:country', forward_get);

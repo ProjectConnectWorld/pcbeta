@@ -13,6 +13,7 @@
     "leaflet-geojson-cluster": "0.0.4",
     "leaflet.markercluster": "^1.1.0",
     "lodash": "^4.17.4",
+    "memory-cache": "^0.2.0",
     "react": "^15.6.1",
     "react-addons-transition-group": "^15.4.2",
     "react-bootstrap": "^0.31.3",

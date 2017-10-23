@@ -61,7 +61,6 @@ function getNewToken(url, rfToken) {
         console.log("T: " + acToken);
       }
     });
-
 }
 
 const forward_get = (req, res, next) => {

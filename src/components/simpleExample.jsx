@@ -319,11 +319,11 @@ class SimpleExample extends Component {
 
   pointToLayer = (feature, latlng) => {
     // console.log(feature.properties);
-    return L.circle(latlng, {
+    return L.Circle(latlng, {
       color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
       fillColor: this.getStyle(feature.properties.speed_connectivity),
       fillOpacity: .6,
-      radius: 2
+      radius: 5
     }).bindPopup(popUpString(feature.properties)); // Change marker to circle
   }
 

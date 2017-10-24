@@ -30,7 +30,7 @@ class Alert2 extends Component {
       },
       any: function() {
         //return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-        return true;
+        return false;
       }
     };
     console.log(!isMobile);

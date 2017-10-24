@@ -67,7 +67,7 @@ class Alert2 extends Component {
             <Modal.Title> Project Connect</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            The visualization is not optimized for mobile!
+            This visualization is not optimized for mobile!
           </Modal.Body>
           <Modal.Footer>
 

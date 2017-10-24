@@ -6,6 +6,7 @@ import SimpleExample from './components/simpleExample'
 import LeftPanel from './components/leftPanel'
 import RightPanel from './components/rightPanel'
 import Alert from './components/alert'
+import Alert2 from './components/alert2'
 import Naver from './components/nav'
 import Spinner from './components/spinner'
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
       <div>
         <Naver></Naver>
         <Alert></Alert>
+        <Alert2></Alert2>
         <Spinner></Spinner>
         <LeftPanel></LeftPanel>
         <SimpleExample> </SimpleExample>

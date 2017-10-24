@@ -32,6 +32,7 @@ class Alert2 extends Component {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
       }
     };
+    console.log(!isMobile);
 
     this.state = {
       isModalOpen: !isMobile

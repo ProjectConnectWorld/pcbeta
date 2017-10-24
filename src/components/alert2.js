@@ -29,14 +29,13 @@ class Alert2 extends Component {
         return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
       },
       any: function() {
-        //return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-        return false;
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
       }
     };
-    console.log(!isMobile);
+    console.log(!isMobile.any());
 
     this.state = {
-      isModalOpen: true
+      isModalOpen: isMobile.any()
     }
   }
 

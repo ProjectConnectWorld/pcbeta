@@ -36,7 +36,7 @@ class Alert2 extends Component {
     console.log(!isMobile);
 
     this.state = {
-      isModalOpen: !isMobile
+      isModalOpen: true
     }
   }
 

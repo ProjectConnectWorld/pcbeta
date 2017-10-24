@@ -291,7 +291,7 @@ class SimpleExample extends Component {
         console.log(e);
         if (this.props.countrySelected.admin1 !== feature.id && this.props.countrySelected.country === 'BR') {
           var admin1 = e.target.feature.id;
-          console.log(e.target.feature.);
+          console.log(e.target.feature);
           //var admin1L = e.target.feature;
           console.log(admin1);
           var alpha2 = 'BR'

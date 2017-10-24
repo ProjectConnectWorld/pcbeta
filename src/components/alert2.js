@@ -33,7 +33,7 @@ class Alert2 extends Component {
       }
     };
 
-    console.log(!isMobile.any());
+    console.log(isMobile.any());
 
     this.state = {
       isModalOpen: isMobile.any()

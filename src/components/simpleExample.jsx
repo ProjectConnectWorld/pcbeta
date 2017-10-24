@@ -322,7 +322,7 @@ class SimpleExample extends Component {
     return L.circleMarker(latlng, {
       color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
       fillColor: this.getStyle(feature.properties.speed_connectivity),
-      fillOpacity: .6,
+      fillOpacity: .8,
       radius: 3,
       stroke: false
     }).bindPopup(popUpString(feature.properties)); // Change marker to circle

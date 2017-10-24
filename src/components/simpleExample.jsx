@@ -413,18 +413,18 @@ class SimpleExample extends Component {
                 attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
             </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name='Satellite'>
+            {/* <LayersControl.BaseLayer name='Satellite'>
               <TileLayer
                 url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
                 attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-            </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name='Streets'>
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Streets'>
               <TileLayer
                 url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
                 attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-            </LayersControl.BaseLayer>
+            </LayersControl.BaseLayer> */}
           </LayersControl>
 
           <GeoJSON

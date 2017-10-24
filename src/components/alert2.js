@@ -12,29 +12,6 @@ import './alert.css';
 class Alert2 extends Component {
   constructor() {
     super();
-    this.state = {
-      isModalOpen: true
-    }
-  }
-
-
-  getInitialState() {
-    return {
-      isModalOpen: true
-    };
-  }
-
-  handleToggle() {
-    this.setState({
-      isModalOpen: false,
-    });
-  }
-
-
-
-
-
-  render() {
     var isMobile = {
       Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -56,9 +33,34 @@ class Alert2 extends Component {
       }
     };
 
+    this.state = {
+      isModalOpen: !isMobile
+    }
+  }
+
+
+  // getInitialState() {
+  //   return {
+  //     isModalOpen: true
+  //   };
+  // }
+
+  handleToggle() {
+    this.setState({
+      isModalOpen: false,
+    });
+  }
+
+
+
+
+
+  render() {
+
+
     return (
       <div>
-        <Modal show={true} onHide={this.handleToggle.bind(this)} >
+        <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)} >
           <Modal.Header closeButton>
             <Modal.Title> Project Connect</Modal.Title>
           </Modal.Header>

@@ -3,13 +3,13 @@ import bStates from '../data/brazilStates'
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
 
-export function ClickedCountry(country, sliderVal, admin1) {
+export function ClickedCountry(country, sliderVal, admin1, admin1L) {
   console.log("YOU CLICKED ON COUNTRY: ", country);
   var extra = ""
   var stateName = ""
   if (admin1 !== null) {
     extra = '?id_1=' + admin1;
-    stateName = bStates[admin1];
+    stateName = bStates[admin1L];
     console.log(stateName);
   }
 

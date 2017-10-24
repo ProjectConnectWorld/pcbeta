@@ -323,7 +323,7 @@ class SimpleExample extends Component {
       color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
       fillColor: this.getStyle(feature.properties.speed_connectivity),
       fillOpacity: .6,
-      radius: 1
+      radius: 2
     }).bindPopup(popUpString(feature.properties)); // Change marker to circle
   }
 

@@ -58,7 +58,7 @@ class Alert2 extends Component {
 
     return (
       <div>
-        <Modal show={!isMobile.any()} onHide={this.handleToggle.bind(this)} >
+        <Modal show={false} onHide={this.handleToggle.bind(this)} >
           <Modal.Header closeButton>
             <Modal.Title> Project Connect</Modal.Title>
           </Modal.Header>

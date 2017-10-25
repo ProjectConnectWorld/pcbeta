@@ -238,6 +238,7 @@ class SimpleExample extends Component {
         console.log(e.latlng);
         var alpha2 = alpha3ToAlpha2(e.target.feature.id);
         if ((allCountries.indexOf(alpha2) > -1) && alpha2 !== this.props.countrySelected.country) {
+          alert("Data not independently verified")
           console.log("Calling: " + alpha2);
           this.props.loadSpinner(true);
           this.centerCountry(e.latlng, 5);
@@ -362,7 +363,7 @@ class SimpleExample extends Component {
             <LayersControl.BaseLayer name='Black And White' checked >
               <TileLayer
                 url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
               />
             </LayersControl.BaseLayer>
             {/* <LayersControl.BaseLayer name='Satellite'>

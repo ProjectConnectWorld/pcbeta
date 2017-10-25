@@ -58,7 +58,7 @@ class Alert extends Component {
             </p>
             <p><strong>Yellow </strong>
             countries indicate that we have both school location and Internet connectivity data.</p>
-            <p><strong>Light gray</strong> indicates that we
+            <p><strong>Light gray</strong> countries indicates that we
             only have school location information.</p>
           </Modal.Body>
           <Modal.Footer>

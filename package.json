@@ -7,6 +7,7 @@
     "chart.js": "^2.6.0",
     "cors": "^2.8.4",
     "emotion": "^8.0.6",
+    "geojson": "^0.5.0",
     "i18n-iso-countries": "^3.0.0",
     "iso-3166-1-alpha-2": "^1.0.0",
     "leaflet": "^1.2.0",

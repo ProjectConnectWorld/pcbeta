@@ -1,5 +1,6 @@
 import axios from 'axios';
 import bStates from '../data/brazilStates'
+import arrToGeo from '../components/2dToGeo'
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
 
@@ -23,6 +24,11 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
       })
       .then(response => {
         //console.log(country, 'Fetched!');
+        console.log('TEST');
+        console.log(response);
+        var newGeo = arrToGeo(response.data.result[0], response.data.result.slice(1))
+        console.log(newGeo);
+        console.log('END');
         var countryname = iso3311a2.getCountry(country)
         var geojson = null;
         var geojsoncount = null;
@@ -31,8 +37,8 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         if (response === null) {
           alert("Please reload page")
         } else {
-          geojson = response.data.result;
-          geojsoncount = response.data.count;
+          geojson = newGeo;
+          geojsoncount = response.datacount;
           schoolcount = geojson.features.length
         }
         var totalteachers = 0;

@@ -5,6 +5,22 @@
   left: 2%;
   z-index: 1000;
 }
+.overlay1{
+  position: absolute;
+  right: 0;
+  width: 30px;
+   height: 30px;
+   padding: 6px;
+   border-radius: 15px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 1.42857;
+  z-index: 1000;
+  background-color: #F5A623;
+
+
+
+}
 
 .left-mod .piechart {
   margin: 3% 3% 0 3%;

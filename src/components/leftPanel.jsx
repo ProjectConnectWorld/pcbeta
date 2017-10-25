@@ -9,6 +9,11 @@ import {
 } from 'react-redux';
 import './leftPanel.css'
 import ChoosePie from './choosePie';
+import {
+  Tooltip,
+  OverlayTrigger,
+  Button
+} from 'react-bootstrap';
 
 
 class LeftPanel extends Component {
@@ -24,6 +29,25 @@ class LeftPanel extends Component {
       }
 
     }
+    var tooltip;
+    if (this.props.countrySelected.adminName != null) {
+      if (this.props.countrySelected.adminName.length > 1) {
+        var tooltip = (
+          <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the selected region. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
+        );
+      } else {
+        var tooltip = (
+          <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the entire country. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
+        );
+      }
+
+    } else {
+      var tooltip = (
+        <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the entire country. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
+      );
+    }
+
+
 
 
     return (
@@ -32,6 +56,7 @@ class LeftPanel extends Component {
           {fullname} {this.props.countrySelected.countryname} Attributes
         </div>
         <div className="dynamic">
+
 
 
           <div className="content">
@@ -74,6 +99,9 @@ class LeftPanel extends Component {
           Connectivity
         </div>
         <div className="piechart  " id="piechart">
+          <OverlayTrigger  placement="right" overlay={tooltip}>
+            <Button className="overlay1" bsStyle="default">i</Button>
+          </OverlayTrigger>
           <div className="piecontainer">
             <ChoosePie  />
           </div>

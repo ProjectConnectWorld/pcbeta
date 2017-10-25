@@ -41,7 +41,7 @@ class Alert extends Component {
       <div>
         <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)} >
           <Modal.Header closeButton>
-            <Modal.Title> Project Connect | Alpha Version </Modal.Title>
+            <Modal.Title> Project Connect || Alpha Version </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>

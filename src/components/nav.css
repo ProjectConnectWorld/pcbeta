@@ -2,8 +2,6 @@
   z-index: 1000;
   background: rgba(0, 0, 0, 0.8);
   border-bottom: 2px solid #F5A623;
-  height: 7vh;
-  max-height: 8vh;
   padding: 0 0 2% 1%;
   width: 100vw !important;
 }

@@ -62,7 +62,7 @@ class Alert extends Component {
             only have school location information.</p>
           </Modal.Body>
           <Modal.Footer>
-            <p><strong>*NOTE*</strong> Data had not been independently verified</p>
+            <p><strong>*NOTE*</strong> Not all data has been independently verified</p>
           </Modal.Footer>
         </Modal>
       </div>

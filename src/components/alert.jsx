@@ -41,13 +41,13 @@ class Alert extends Component {
       <div>
         <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)} >
           <Modal.Header closeButton>
-            <Modal.Title> Project Connect Alpha Version </Modal.Title>
+            <Modal.Title> Project Connect | Alpha Version </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>
               Welcome to Project Connect's real-time data visualization! This project is in its <strong> alpha version </strong> and is a continuous work in
               progress. The data available does not necessarily represent a complete inventory of a country's school locations and level
-              of internet connectivity. <strong> We are always looking for more partners </strong> to validate (and add!) to our existing datasets. Please
+              of Internet connectivity. <strong> We are always looking for more partners </strong> to validate (and add!) to our existing datasets. Please
               contact <a href= "mailto:info@projectconnect.world?Subject=More%20Information">  Project Connect </a> to learn more.
             </p>
             <p>

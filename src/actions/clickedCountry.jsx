@@ -23,18 +23,15 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         alert('There was an error trying to fetch. Please check your internet connection', country)
       })
       .then(response => {
-        //console.log(country, 'Fetched!');
-        console.log('TEST');
-        console.log(response);
-        var newGeo = arrToGeo(response.data.result[0], response.data.result.slice(1))
-        console.log(newGeo);
-        console.log('END');
+
         var countryname = iso3311a2.getCountry(country)
+        var newGeo = null;
         var geojson = null;
         var geojsoncount = null;
         var schoolcount = null;
 
         try {
+          newGeo = arrToGeo(response.data.result[0], response.data.result.slice(1))
           geojson = newGeo;
           geojsoncount = response.datacount;
           schoolcount = geojson.features.length

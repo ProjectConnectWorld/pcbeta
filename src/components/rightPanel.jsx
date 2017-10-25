@@ -13,6 +13,9 @@ import VerticalSlider from './verticalSlider';
 class RightPanel extends Component {
 
   render() {
+    const tooltip = (
+      <Tooltip id="tooltip">BLAH</Tooltip>
+    );
     if (this.props.countrySelected.showSpeed && this.props.countrySelected.country === 'BR' && this.props.countrySelected.admin1 != null) {
       return (
         <div className="right-mod">
@@ -20,7 +23,9 @@ class RightPanel extends Component {
             Speed (Mbps)
           </div>
           <div className="slidercontainer">
-
+            <OverlayTrigger  placement="left" overlay={tooltip}>
+              <Button className="overlay1" bsStyle="default">i</Button>
+            </OverlayTrigger>
             <div className="slider" >
                 <div className="pureslider">
                   <VerticalSlider></VerticalSlider>

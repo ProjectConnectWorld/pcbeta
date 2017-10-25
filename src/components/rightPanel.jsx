@@ -19,7 +19,7 @@ class RightPanel extends Component {
 
   render() {
     const tooltip = (
-      <Tooltip id="tooltip">BLAH</Tooltip>
+      <Tooltip id="tooltip">Move the slider up and down to set an Internet speed threshold. The schools above the threshold will turn green. Those below it will turn yellow. Those with zero connectivity will remain red.</Tooltip>
     );
     if (this.props.countrySelected.showSpeed && this.props.countrySelected.country === 'BR' && this.props.countrySelected.admin1 != null) {
       return (

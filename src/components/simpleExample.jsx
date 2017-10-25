@@ -238,7 +238,6 @@ class SimpleExample extends Component {
         console.log(e.latlng);
         var alpha2 = alpha3ToAlpha2(e.target.feature.id);
         if ((allCountries.indexOf(alpha2) > -1) && alpha2 !== this.props.countrySelected.country) {
-          alert("Data not independently verified")
           console.log("Calling: " + alpha2);
           this.props.loadSpinner(true);
           this.centerCountry(e.latlng, 5);

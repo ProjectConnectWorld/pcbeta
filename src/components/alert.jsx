@@ -60,12 +60,9 @@ class Alert extends Component {
             countries indicate that we have both school location and Internet connectivity data.</p>
             <p><strong>Light gray</strong> indicates that we
             only have school location information.</p>
-            <p><strong>*NOTE*</strong> Data had not been independently verifies</p>
-
-
           </Modal.Body>
           <Modal.Footer>
-
+            <p><strong>*NOTE*</strong> Data had not been independently verified</p>
           </Modal.Footer>
         </Modal>
       </div>

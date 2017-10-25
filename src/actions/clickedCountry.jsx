@@ -34,13 +34,21 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         var geojsoncount = null;
         var schoolcount = null;
 
-        if (response === null) {
-          alert("Please reload page")
-        } else {
+        try {
           geojson = newGeo;
           geojsoncount = response.datacount;
           schoolcount = geojson.features.length
+        } catch (e) {
+          alert("Please reload page")
         }
+
+        // if (response === null) {
+        //   alert("Please reload page")
+        // } else {
+        //   geojson = newGeo;
+        //   geojsoncount = response.datacount;
+        //   schoolcount = geojson.features.length
+        // }
         var totalteachers = 0;
         var totalstudents = 0;
         var totalelec = 0;

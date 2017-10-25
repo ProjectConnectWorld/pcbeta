@@ -7,6 +7,11 @@ import React, {
 import {
   connect
 } from 'react-redux';
+import {
+  Tooltip,
+  OverlayTrigger,
+  Button
+} from 'react-bootstrap';
 import './rightPanel.css'
 import VerticalSlider from './verticalSlider';
 

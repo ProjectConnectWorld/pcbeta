@@ -70,7 +70,7 @@ const forward_get = (req, res, next) => {
   console.log(req.originalUrl);
   const url = `${magicbox_url}${req.originalUrl}`
   console.info(`FORWARD GET: magicbox ${url}`)
-  cache.clear();
+  //cache.clear();
   if (cache.get(url)) {
     console.log("FROM CACHE");
     var cachedResp = cache.get(url)

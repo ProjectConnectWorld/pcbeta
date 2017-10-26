@@ -87,7 +87,7 @@ class SimpleExample extends Component {
     const style = {
       fill: true,
       fillColor: "#fbdba7",
-      fillOpacity: .8,
+      fillOpacity: .5,
       stroke: false,
     }
     const style1 = {
@@ -222,7 +222,7 @@ class SimpleExample extends Component {
           } else {
             layer.setStyle({
               fillColor: "#fbdba7",
-              fillOpacity: .8
+              fillOpacity: .5
             })
           }
 
@@ -350,7 +350,7 @@ class SimpleExample extends Component {
     const styleBR = {
       fill: true,
       fillColor: "#fbdba7",
-      fillOpacity: .8,
+      fillOpacity: .5,
       stroke: false,
     }
 

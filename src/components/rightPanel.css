@@ -20,14 +20,15 @@
 }
 .overlay2{
   position: absolute;
-  left: 0;
+  left: 5%;
+  top: 5%;
   width: 20px;
   height: 20px;
-  padding: 10% 2% 2% 10%;
+  //padding: 10% 2% 2% 10%;
   border-radius: 10px;
   text-align: center;
   font-size: 12px;
-  line-height: 1;
+  line-height: 1.5;
   z-index: 1000;
   background-color: #F5A623;
 

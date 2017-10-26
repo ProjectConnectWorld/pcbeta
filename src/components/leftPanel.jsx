@@ -26,11 +26,11 @@ class LeftPanel extends Component {
   }
 
 
-  getInitialState() {
-    return {
-      isModalOpen: false
-    };
-  }
+  // getInitialState() {
+  //   return {
+  //     isModalOpen: false
+  //   };
+  // }
 
   handleToggle() {
     this.setState({

@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <Naver></Naver>
-        <Alert></Alert>
+        {/* <Alert></Alert> */}
         <Alert2></Alert2>
         <Spinner></Spinner>
         <LeftPanel></LeftPanel>

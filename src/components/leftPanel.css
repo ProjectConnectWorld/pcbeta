@@ -47,7 +47,7 @@
 }
 .questions{
   margin: 3% 3% 0 3%;
-  margin-top: 5%;
+  margin-top: 3%;
   height: 3vh;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid white;
@@ -62,6 +62,8 @@
   height: 30px;
   border-radius: 15px;
   text-align: center;
+  padding: 2%;
+  margin: 2%;
 
 
 }

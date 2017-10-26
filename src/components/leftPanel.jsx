@@ -18,58 +18,73 @@ import {
 
 
 class LeftPanel extends Component {
+  getInitialState() {
+      return {
+        showModal: false
+      };
+    },
 
+    close() {
+      this.setState({
+        showModal: false
+      });
+    },
 
+    open() {
+      this.setState({
+        showModal: true
+      });
+    },
 
-  render() {
-    getInitialState = () => {
-        return {
-          showModal: false
-        };
-      },
+    render() {
+      // getInitialState = () => {
+      //     return {
+      //       showModal: false
+      //     };
+      //   },
+      //
+      //   close = () => {
+      //     this.setState({
+      //       showModal: false
+      //     });
+      //   },
+      //
+      //   open = () => {
+      //     this.setState({
+      //       showModal: true
+      //     });
+      //   }
+      var fullname = "";
+      if (this.props.countrySelected.adminName != null) {
 
-      close = () => {
-        this.setState({
-          showModal: false
-        });
-      },
+        if (this.props.countrySelected.adminName.length > 1) {
+          fullname = this.props.countrySelected.adminName + ", "
+        }
 
-      open = () => {
-        this.setState({
-          showModal: true
-        });
       }
-    var fullname = "";
-    if (this.props.countrySelected.adminName != null) {
+      var tooltip;
+      if (this.props.countrySelected.adminName != null) {
+        if (this.props.countrySelected.adminName.length > 1) {
+          var tooltip = (
+            <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the selected region. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
+          );
+        } else {
+          var tooltip = (
+            <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the entire country. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
+          );
+        }
 
-      if (this.props.countrySelected.adminName.length > 1) {
-        fullname = this.props.countrySelected.adminName + ", "
-      }
-
-    }
-    var tooltip;
-    if (this.props.countrySelected.adminName != null) {
-      if (this.props.countrySelected.adminName.length > 1) {
-        var tooltip = (
-          <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the selected region. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
-        );
       } else {
         var tooltip = (
           <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the entire country. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
         );
       }
 
-    } else {
-      var tooltip = (
-        <Tooltip id="tooltip">This shows the percentage of schools connected to the Internet for the entire country. To compare between specific connectivity levels click on the boxes below and hover over the pie chart to see the number of schools.</Tooltip>
-      );
-    }
 
 
 
-
-    return (
-      <div className="left-mod">
+      return (
+        <div className="left-mod">
         <div className="label">
           {fullname} {this.props.countrySelected.countryname} Attributes
         </div>
@@ -131,7 +146,7 @@ class LeftPanel extends Component {
             <Modal.Body>
               <h4>Text in a modal</h4>
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-              
+
               <hr />
 
               <h4>Overflowing text to show scroll behavior</h4>
@@ -153,10 +168,10 @@ class LeftPanel extends Component {
 
 
       </div>
-    )
+      )
 
 
-  }
+    }
 }
 
 

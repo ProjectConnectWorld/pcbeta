@@ -48,12 +48,14 @@
 .questions{
   margin: 3% 3% 0 3%;
   margin-top: 5%;
-  height: 5vh;
+  height: 3vh;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid white;
   border-radius: 25px;
   width: 100%;
+  color: #F5A623;
   text-align: center;
+  font-size: 1.8vmin;
 }
 .qbutton{
   width: 20px;

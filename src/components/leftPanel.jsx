@@ -38,8 +38,8 @@ class LeftPanel extends Component {
         this.setState({
           showModal: true
         });
-      },
-      var fullname = "";
+      }
+    var fullname = "";
     if (this.props.countrySelected.adminName != null) {
 
       if (this.props.countrySelected.adminName.length > 1) {

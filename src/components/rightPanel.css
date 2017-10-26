@@ -22,12 +22,12 @@
   position: absolute;
   left: 0;
   width: 20px;
-   height: 20px;
-   padding: 2%;
-   border-radius: 10px;
-   text-align: center;
-   font-size: 12px;
-   line-height: 1;
+  height: 20px;
+  padding: 10% 2% 2% 10%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
   z-index: 1000;
   background-color: #F5A623;
 

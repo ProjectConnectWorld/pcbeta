@@ -86,13 +86,13 @@ class SimpleExample extends Component {
     //var layer = e.target;
     const style = {
       fill: true,
-      fillColor: "#fbdba7",
+      fillColor: "#f8c065",
       fillOpacity: .5,
       stroke: false,
     }
     const style1 = {
       fill: true,
-      fillColor: "#fbdba7",
+      fillColor: "#f8c065",
       fillOpacity: 0,
       stroke: false,
     }
@@ -221,7 +221,7 @@ class SimpleExample extends Component {
             })
           } else {
             layer.setStyle({
-              fillColor: "#fbdba7",
+              fillColor: "#f8c065",
               fillOpacity: .5
             })
           }
@@ -349,7 +349,7 @@ class SimpleExample extends Component {
 
     const styleBR = {
       fill: true,
-      fillColor: "#fbdba7",
+      fillColor: "#f8c065",
       fillOpacity: .5,
       stroke: false,
     }

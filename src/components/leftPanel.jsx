@@ -28,7 +28,7 @@ class LeftPanel extends Component {
 
   getInitialState() {
     return {
-      isModalOpen: true
+      isModalOpen: false
     };
   }
 
@@ -132,28 +132,31 @@ class LeftPanel extends Component {
           <Button bsStyle="default" className="qbutton" onClick={this.handleToggle2.bind(this)} >?</Button>
           <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title> Project Connect   |   Alpha Version </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>Text in a modal</h4>
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+              <p>
+                Welcome to Project Connect's real-time data visualization! This project is in its <strong> alpha version </strong> and is a continuous work in
+                progress. The data available does not necessarily represent a complete inventory of a country's school locations and level
+                of Internet connectivity. <strong> We are always looking for more partners </strong> to validate (and add!) to our existing datasets. Please
+                contact <a href= "mailto:info@projectconnect.world?Subject=More%20Information">  Project Connect </a> to learn more.
+              </p>
+              <p>
+                <h4>Navigating this map</h4>
+                This map brings together a wide range of data, including school location and other key attributes as well as information
+                on school Internet connectivity, both in terms of speed (Mbs) and type (2G and 3G). Click on a country to see what
+                information is currently available and on individual dots to find out more details for a particular school.
+              </p>
 
-              <hr />
-
-              <h4>Overflowing text to show scroll behavior</h4>
-              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p><span>&#8226;</span><strong>Dark yellow </strong>
+              countries indicate that we have both school location and Internet connectivity data.</p>
+              <p><span>&#8226;</span><strong>Light yellow </strong> countries indicates that we
+              only have school location information.</p>
             </Modal.Body>
             <Modal.Footer>
-
+              <p><strong>*NOTE*</strong>  Not all data has been independently verified. We also only have partial data for some countries and are looking for your help to continue filling out this map.</p>
             </Modal.Footer>
+
           </Modal>
         </div>
 

@@ -56,9 +56,6 @@ class LeftPanel extends Component {
           {fullname} {this.props.countrySelected.countryname} Attributes
         </div>
         <div className="dynamic">
-
-
-
           <div className="content">
             {/* <!-- Schools --> */}
             <div className="schools eld">
@@ -106,10 +103,11 @@ class LeftPanel extends Component {
             <ChoosePie  />
           </div>
         </div>
-        {/* <div className="toggles ">
+        <div className="questions">
+          Questions <Button bsStyle="default">?</Button>
+        </div>
 
-          </div>
-        */}
+
       </div>
     )
 

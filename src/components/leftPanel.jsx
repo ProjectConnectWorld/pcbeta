@@ -18,11 +18,14 @@ import {
 
 
 class LeftPanel extends Component {
-  getInitialState() {
-    return {
+  constructor(props, context) {
+    super(props, context);
+    this.setState({
       showModal: false
-    };
+    })
   }
+
+
 
   close() {
     this.setState({

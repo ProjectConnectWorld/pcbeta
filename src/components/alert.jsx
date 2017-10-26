@@ -56,13 +56,11 @@ class Alert extends Component {
               on school Internet connectivity, both in terms of speed (Mbs) and type (2G and 3G). Click on a country to see what
               information is currently available and on individual dots to find out more details for a particular school.
             </p>
-            <ul>
-              <li><strong>Dark yellow </strong>
-              countries indicate that we have both school location and Internet connectivity data.</li>
-              <li><strong>Light yellow </strong> countries indicates that we
-              only have school location information.</li>
-            </ul>
-            
+
+            <p><span>&#8226;</span><strong>Dark yellow </strong>
+            countries indicate that we have both school location and Internet connectivity data.</p>
+            <p><span>&#8226;</span><strong>Light yellow </strong> countries indicates that we
+            only have school location information.</p>
           </Modal.Body>
           <Modal.Footer>
             <p><strong>*NOTE*</strong>  Not all data has been independently verified. We also only have partial data for some countries and are looking for your help to continue filling out this map.</p>

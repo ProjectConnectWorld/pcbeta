@@ -20,12 +20,12 @@
 }
 .overlay2{
   position: absolute;
-  left: 5%;
+  left: 6%;
   top: 5%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   //padding: 10% 2% 2% 10%;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
   font-size: 12px;
   line-height: 1.5;

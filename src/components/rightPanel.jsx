@@ -29,7 +29,7 @@ class RightPanel extends Component {
           </div>
           <div className="slidercontainer">
             <OverlayTrigger  placement="left" overlay={tooltip}>
-              <Button className="overlay2" bsStyle="default"></Button>
+              <Button className="overlay2" bsStyle="default">i</Button>
             </OverlayTrigger>
             <div className="slider" >
                 <div className="pureslider">

@@ -104,7 +104,7 @@ class LeftPanel extends Component {
           </div>
         </div>
         <div className="questions">
-          Questions <Button bsStyle="default">?</Button>
+          Questions <Button bsStyle="default" className="qbutton">?</Button>
         </div>
 
 

@@ -130,7 +130,7 @@ class LeftPanel extends Component {
 
         <div className="questions">
           <Button bsStyle="default" className="qbutton" onClick={this.handleToggle2.bind(this)} >?</Button>
-          <Modal show={show={this.state.isModalOpen}} onHide={this.handleToggle.bind(this)}>
+          <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)}>
             <Modal.Header closeButton>
               <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
@@ -152,7 +152,7 @@ class LeftPanel extends Component {
               <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
             </Modal.Body>
             <Modal.Footer>
-              
+
             </Modal.Footer>
           </Modal>
         </div>

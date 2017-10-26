@@ -103,8 +103,11 @@ class LeftPanel extends Component {
             <ChoosePie  />
           </div>
         </div>
+        <div className="label">
+          Questions
+        </div>
         <div className="questions">
-          Questions <Button bsStyle="default" className="qbutton">?</Button>
+          <Button bsStyle="default" className="qbutton">?</Button>
         </div>
 
 

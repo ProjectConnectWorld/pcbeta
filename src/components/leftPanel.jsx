@@ -18,26 +18,31 @@ import {
 
 
 class LeftPanel extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.setState({
-      showModal: false
-    })
+  constructor() {
+    super();
+    this.state = {
+      isModalOpen: true
+    }
   }
 
 
+  getInitialState() {
+    return {
+      isModalOpen: true
+    };
+  }
 
-  close() {
+  handleToggle() {
     this.setState({
-      showModal: false
+      isModalOpen: false,
+    });
+  }
+  handleToggle2() {
+    this.setState({
+      isModalOpen: true,
     });
   }
 
-  open() {
-    this.setState({
-      showModal: true
-    });
-  }
 
   render() {
     var fullname = "";
@@ -124,8 +129,8 @@ class LeftPanel extends Component {
         </div>
 
         <div className="questions">
-          <Button bsStyle="default" className="qbutton" onClick={this.open.bind(this)} >?</Button>
-          <Modal show={this.state.showModal} onHide={this.close.bind(this)}>
+          <Button bsStyle="default" className="qbutton" onClick={this.handleToggle2.bind(this)} >?</Button>
+          <Modal show={show={this.state.isModalOpen}} onHide={this.handleToggle.bind(this)}>
             <Modal.Header closeButton>
               <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
@@ -147,7 +152,7 @@ class LeftPanel extends Component {
               <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.close.bind(this)}>Close</Button>
+              
             </Modal.Footer>
           </Modal>
         </div>

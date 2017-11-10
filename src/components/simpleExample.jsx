@@ -466,12 +466,11 @@ class SimpleExample extends Component {
         <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
           <ZoomControl position="bottomleft" />
           <LayersControl position='bottomright'>
-            <LayersControl.BaseLayer name='Black And White' checked >
-              <TileLayer
+            <TileLayer
                 url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
                 attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-            </LayersControl.BaseLayer>
+
             {/* <LayersControl.BaseLayer name='Satellite'>
               <TileLayer
                 url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'

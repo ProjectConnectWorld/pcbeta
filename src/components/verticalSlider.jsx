@@ -25,9 +25,6 @@ class VerticalSlider extends Component {
 
   }
 
-
-
-
   render() {
     const {
       value

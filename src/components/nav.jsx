@@ -12,14 +12,10 @@ import logo2 from '../data/unicef.png'
 
 
 
-
+// Navbar
 class Naver extends Component {
 
-
-
   render() {
-
-
 
     return (
       <Navbar>

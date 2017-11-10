@@ -3,20 +3,24 @@ import bStates from '../data/brazilStates'
 import arrToGeo from '../components/2dToGeo'
 var iso3311a2 = require('iso-3166-1-alpha-2')
 
-
+// This code runs when a country is selected (clicked on)
 export function ClickedCountry(country, sliderVal, admin1, admin1L) {
   console.log("YOU CLICKED ON COUNTRY: ", country);
   var extra = ""
   var stateName = ""
+  // Gets the state name( admin 1) from brazilStates file
+  // This is just for brazil at the moment
   if (admin1 !== null) {
     extra = '?id_1=' + admin1;
     stateName = bStates[admin1L];
     console.log(stateName);
   }
 
+  // Here we se axios to submit the GET request
+  // axios calls localhost:3000/schools/countries/...
+  // which then gets ported to localhost:3001/schools/countries/...
   return function(dispatch) {
     console.log('About to fetch', country + extra);
-    //console.log(api_url + '/schools/countries/' + country);
     axios.defaults.withCredentials = true;
     axios.get('/schools/countries/' + country + extra)
       .catch(err => {
@@ -39,13 +43,6 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
           alert("Please reload page")
         }
 
-        // if (response === null) {
-        //   alert("Please reload page")
-        // } else {
-        //   geojson = newGeo;
-        //   geojsoncount = response.datacount;
-        //   schoolcount = geojson.features.length
-        // }
         var totalteachers = 0;
         var totalstudents = 0;
         var totalelec = 0;
@@ -61,13 +58,9 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         var b_3gconn = 0;
         var b_noData = 0;
         var avgspeed = 0;
-        // console.log(geojson);
-        // console.log(countryname);
-        // console.log(countryname);
-        // console.log(countryname);
 
-
-
+        // Here ncountry averages and totals are computed
+        // ex: schools with no connection, 2G, ETC
         for (var i = 0; i < schoolcount; i++) {
           if (geojson.features[i].properties.speed_connectivity === null) {
             noData++;
@@ -97,10 +90,6 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
           } else if (geojson.features[i].properties.type_connectivity === "3G") {
             b_3gconn++;
           }
-
-          // if (geojson.features[i].properties.type_connectivity >= 0) {
-          //   totalconnectedschools++;
-          // }
 
           if (geojson.features[i].properties.num_teachers !== null) {
             totalteachers += geojson.features[i].properties.num_teachers;
@@ -141,10 +130,7 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         if (totalconnectedschools / schoolcount > .3) {
           showSpeed = true;
         }
-        //console.log("showSpeed");
-        //console.log(showSpeed);
-        //console.log(Object.getOwnPropertyNames(response));
-        //console.log(geojson.features.length);
+        // Using a reducer to dispatch the payload 
         dispatch({
           type: 'COUNTRY_FETCHED',
           payload: {

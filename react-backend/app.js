@@ -1,13 +1,12 @@
+// App.js sends a valid route to the proper route handling file
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-
 var index = require('./routes/index');
-var users = require('./routes/users');
 var schools = require('./routes/schools');
 var app = express();
 var cors = require('cors')
@@ -23,23 +22,7 @@ app.set('view engine', 'jade');
 //app.use(logger('dev'));
 console.log(bodyParser.json());
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-//   next();
-// });
 
-// app.all('*', function(req, res, next) {
-//   res.header('Access-Control-Allow-Origin', 'URLs to trust of allow');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type');
-//   if ('OPTIONS' == req.method) {
-//     res.sendStatus(200);
-//   } else {
-//     next();
-//   }
-// });
 
 
 app.use(bodyParser.json());
@@ -50,7 +33,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/schools', schools);
 
 console.log("IN APP.JS");

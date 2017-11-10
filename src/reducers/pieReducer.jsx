@@ -6,7 +6,6 @@ var initialstate = {
 }
 
 export default function(state = initialstate, action) {
-  //console.log("");
   console.log(action.payload);
   switch (action.type) {
     case "SLIDER_CHANGED":

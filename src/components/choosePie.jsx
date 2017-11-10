@@ -7,19 +7,21 @@ import {
 import PieExample from './pie';
 import PieExample2 from './pie2';
 
-
+// Chooses which pie to show
+// <PieExample/> which is a pie chart without type_connectivity ( 2G, 3G, ETC)
+//  <PieExample2/> has connectivity speed ie 2Mbps
 class ChoosePie extends Component {
 
   render() {
     console.log("cp: " + this.props.countrySelected.showSpeed);
     if (this.props.countrySelected.showSpeed) {
       return (
-        <PieExample />
+        <PieExample/>
       )
 
     } else {
       return (
-        <PieExample2 />
+        <PieExample2/>
       )
     }
 

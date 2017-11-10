@@ -1,6 +1,6 @@
 const LoadSpinner = (loadVal) => {
-  //console.log("ACTION");
 
+  // When a country is clicked, the spinner loads
   console.log("IN SPINNER");
 
   return {

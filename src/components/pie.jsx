@@ -8,6 +8,7 @@ import {
   connect
 } from 'react-redux';
 
+// PieExample is displayed when connectivity_type data is not present
 class PieExample extends Component {
 
   isArray = Array.isArray ?

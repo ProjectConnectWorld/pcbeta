@@ -1,3 +1,4 @@
+// sets up the school data point pop up message
 const popUpString = (prop) => {
   var output = "";
   if (prop.name != null) {

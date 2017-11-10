@@ -6,7 +6,6 @@ import SimpleExample from './components/simpleExample'
 import LeftPanel from './components/leftPanel'
 import RightPanel from './components/rightPanel'
 import Alert from './components/alert'
-import Alert2 from './components/alert2'
 import Naver from './components/nav'
 import Spinner from './components/spinner'
 class App extends Component {
@@ -14,8 +13,7 @@ class App extends Component {
     return (
       <div>
         <Naver></Naver>
-        {/* <Alert></Alert> */}
-        <Alert2></Alert2>
+        <Alert></Alert>
         <Spinner></Spinner>
         <LeftPanel></LeftPanel>
         <SimpleExample> </SimpleExample>
@@ -29,36 +27,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// import React, {
-//   Component
-// } from 'react';
-// import './App.css';
-//
-// class App extends Component {
-//   state = {
-//     users: []
-//   }
-//
-//   componentDidMount() {
-//     fetch('/users')
-//       .then(res => res.json())
-//       .then(users => this.setState({
-//         users
-//       }));
-//   }
-//
-//   render() {
-//     return (
-//       <div className="App">
-//         <h1>Users</h1>
-//         {this.state.users.map(user =>
-//           <div key={user.id}>{user.username}</div>
-//         )}
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;

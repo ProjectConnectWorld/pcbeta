@@ -1,3 +1,4 @@
+// Creates GeoJson from a 2D array
 var GeoJSON = require('geojson');
 const arrToGeo = (params, data) => {
   //console.log("params: " + params[0]);

@@ -15,6 +15,8 @@ import {
 import './rightPanel.css'
 import VerticalSlider from './verticalSlider';
 
+// This houses the slider that allows the uber to select the connectivity speed threshold
+// This happens when over 40% of points have a speed value >= 0
 class RightPanel extends Component {
 
   render() {

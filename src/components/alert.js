@@ -8,8 +8,9 @@ import {
 import './alert.css';
 
 
-
-class Alert2 extends Component {
+// Creates the Alert message that pop ups at the initial loading
+// and when the user presses the questions button
+class Alert extends Component {
   constructor() {
     super();
     var isMobile = {
@@ -41,12 +42,6 @@ class Alert2 extends Component {
   }
 
 
-  // getInitialState() {
-  //   return {
-  //     isModalOpen: true
-  //   };
-  // }
-
   handleToggle() {
     this.setState({
       isModalOpen: false,
@@ -54,12 +49,7 @@ class Alert2 extends Component {
   }
 
 
-
-
-
   render() {
-
-
     return (
       <div>
         <Modal show={this.state.isModalOpen} onHide={this.handleToggle.bind(this)} >
@@ -81,8 +71,4 @@ class Alert2 extends Component {
 }
 
 
-
-
-
-
-export default Alert2;
+export default Alert;

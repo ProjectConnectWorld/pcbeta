@@ -31,6 +31,7 @@ import SliderChanged from '../actions/sliderChanged';
 import LoadSpinner from '../actions/loadSpinner';
 import L from 'leaflet';
 import popUpString from './helperComponent';
+import squareHelper from './squareHelper';
 import allCountries from '../data/allCountryInfo.js';
 //import MarkerClusterGroup from 'react-leaflet-markercluster';
 //import ClusterLayer from 'react-leaflet-cluster-layer';
@@ -319,6 +320,12 @@ class SimpleExample extends Component {
 
   pointToLayer = (feature, latlng) => {
     // console.log(feature.properties);
+    // return L.rectangle(squareHelper(latlng, .05), {
+    //   color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
+    //   fillColor: this.getStyle(feature.properties.speed_connectivity),
+    //   fillOpacity: .8,
+    //   stroke: false
+    // }).bindPopup(popUpString(feature.properties));
     return L.circleMarker(latlng, {
       color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
       fillColor: this.getStyle(feature.properties.speed_connectivity),
@@ -355,52 +362,104 @@ class SimpleExample extends Component {
     }
 
     if (this.props.countrySelected.geojson) {
-      return (
-        <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
-          <ZoomControl position="bottomleft" />
-          <LayersControl position='bottomright'>
-            <LayersControl.BaseLayer name='Black And White' checked >
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
-              />
-            </LayersControl.BaseLayer>
-            {/* <LayersControl.BaseLayer name='Satellite'>
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
+      if (this.props.countrySelected.country === "CO") {
+        return (
+          <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
+            <ZoomControl position="bottomleft" />
+            <LayersControl position='bottomright'>
+              <LayersControl.BaseLayer name='Black And White' checked >
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
+                />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Satellite'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
               </LayersControl.BaseLayer>
               <LayersControl.BaseLayer name='Streets'>
-              <TileLayer
-                url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-            </LayersControl.BaseLayer> */}
-          </LayersControl>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer>
+            </LayersControl>
 
-          <GeoJSON
-            key={_.uniqueId()}
-            data={GeoJsonV}
-            style={this.styleMe.bind(this)}
-            onEachFeature= {this.onEachFeature.bind(this)}
-            filter = {this.geoFilter.bind(this)}
-          ></GeoJSON>
-          <GeoJSON
-            data={BrazilGeo}
-            onEachFeature= {this.onEachFeature2.bind(this)}
-            style={this.styleMe2.bind(this)}
-            // filter={this.showBrazilDist.bind(this)}
-          ></GeoJSON>
-          <GeoJSON
-            key={_.uniqueId()}s
-            data= {this.props.countrySelected.geojson}
-            pointToLayer={this.pointToLayer.bind(this)}
-            filter = {this.pointFilter.bind(this)}
-          ></GeoJSON>
-          </Map>
+            <GeoJSON
+              key={_.uniqueId()}
+              data={GeoJsonV}
+              style={this.styleMe.bind(this)}
+              onEachFeature= {this.onEachFeature.bind(this)}
+              filter = {this.geoFilter.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              data={BrazilGeo}
+              onEachFeature= {this.onEachFeature2.bind(this)}
+              style={this.styleMe2.bind(this)}
+              // filter={this.showBrazilDist.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              key={_.uniqueId()}s
+              data= {this.props.countrySelected.geojson}
+              pointToLayer={this.pointToLayer.bind(this)}
+              filter = {this.pointFilter.bind(this)}
+            ></GeoJSON>
+            </Map>
 
-      )
+        )
+
+      } else {
+        return (
+          <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
+            <ZoomControl position="bottomleft" />
+            <LayersControl position='bottomright'>
+              <LayersControl.BaseLayer name='Black And White' checked >
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
+                />
+              </LayersControl.BaseLayer>
+              {/* <LayersControl.BaseLayer name='Satellite'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+                </LayersControl.BaseLayer>
+                <LayersControl.BaseLayer name='Streets'>
+                <TileLayer
+                  url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </LayersControl.BaseLayer> */}
+            </LayersControl>
+
+            <GeoJSON
+              key={_.uniqueId()}
+              data={GeoJsonV}
+              style={this.styleMe.bind(this)}
+              onEachFeature= {this.onEachFeature.bind(this)}
+              filter = {this.geoFilter.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              data={BrazilGeo}
+              onEachFeature= {this.onEachFeature2.bind(this)}
+              style={this.styleMe2.bind(this)}
+              // filter={this.showBrazilDist.bind(this)}
+            ></GeoJSON>
+            <GeoJSON
+              key={_.uniqueId()}s
+              data= {this.props.countrySelected.geojson}
+              pointToLayer={this.pointToLayer.bind(this)}
+              filter = {this.pointFilter.bind(this)}
+            ></GeoJSON>
+            </Map>
+
+        )
+
+      }
+
 
     } else {
       return (

@@ -4,7 +4,8 @@ const SliderChanged = (value, geoJson) => {
   var bconn = 0;
   var aconn = 0;
   var noData = 0;
-
+  // Here the values are calculated that are in the pie chart
+  // values abouve the threshold, below, no data, and zero connection
   for (var i = 0; i < geoJson.features.length; i++) {
     if (geoJson.features[i].properties.speed_connectivity === null) {
       noData++;
@@ -19,10 +20,7 @@ const SliderChanged = (value, geoJson) => {
       aconn++;
     }
   }
-  // console.log(nconn);
-  // console.log(bconn);
-  // console.log(aconn);
-  // console.log(noData);
+
 
   return {
     type: "SLIDER_CHANGED",

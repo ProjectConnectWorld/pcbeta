@@ -16,7 +16,7 @@ import {
   Modal
 } from 'react-bootstrap';
 
-
+// The left panel houses the Country Connectivity data, the pie chart, and the question button
 class LeftPanel extends Component {
   constructor() {
     super();
@@ -24,13 +24,6 @@ class LeftPanel extends Component {
       isModalOpen: true
     }
   }
-
-
-  // getInitialState() {
-  //   return {
-  //     isModalOpen: false
-  //   };
-  // }
 
   handleToggle() {
     this.setState({

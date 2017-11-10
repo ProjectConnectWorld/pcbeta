@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <Naver></Naver>
-        <Alert></Alert>
+        {/* <Alert></Alert> */}
         <Spinner></Spinner>
         <LeftPanel></LeftPanel>
         <SimpleExample> </SimpleExample>

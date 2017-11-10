@@ -414,26 +414,30 @@ class SimpleExample extends Component {
         return (
           <Map center={position} zoom={this.props.mapData.zoom} zoomControl={this.props.mapData.zoomControl} ref="map">
             <ZoomControl position="bottomleft" />
-            <LayersControl position='bottomright'>
+            <TileLayer
+              url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+              attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
+            />
+            {/* <LayersControl position='bottomright'>
               <LayersControl.BaseLayer name='Black And White' checked >
                 <TileLayer
-                  url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
+              url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+              attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors '
                 />
               </LayersControl.BaseLayer>
-              {/* <LayersControl.BaseLayer name='Satellite'>
+              <LayersControl.BaseLayer name='Satellite'>
                 <TileLayer
-                  url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+              attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
-                </LayersControl.BaseLayer>
-                <LayersControl.BaseLayer name='Streets'>
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name='Streets'>
                 <TileLayer
-                  url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
-                  attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url = 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
+              attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
-              </LayersControl.BaseLayer> */}
-            </LayersControl>
+              </LayersControl.BaseLayer>
+            </LayersControl> */}
 
             <GeoJSON
               key={_.uniqueId()}
@@ -474,7 +478,7 @@ class SimpleExample extends Component {
               url = 'https://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'
               attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            
+
             <LayersControl.BaseLayer name='Satellite'>
               <TileLayer
             url = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXlhbmV6IiwiYSI6ImNqNHloOXAweTFveWwzM3A4M3FkOWUzM2UifQ.GfClkT4QxlFDC_xiI37x3Q'

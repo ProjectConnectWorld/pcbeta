@@ -1,4 +1,8 @@
 // sets up the school data point pop up message
+const myFunction = () => {
+  console.log("in MY FUNCTION");
+}
+
 const popUpString = (prop) => {
   var output = "";
   if (prop.name != null) {
@@ -115,6 +119,8 @@ const popUpString = (prop) => {
     }
     output += "Water: " + water + "<br>";
   }
+  // output += "<button onclick ='myFunction()'> Real Time Data </button>"
+
 
   return output;
 }

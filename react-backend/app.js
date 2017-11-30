@@ -6,8 +6,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var index = require('./routes/index');
 var schools = require('./routes/schools');
+var oneschool = require('./routes/oneschool');
+
 var app = express();
 var cors = require('cors')
 
@@ -20,9 +23,9 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(logger('dev'));
-console.log(bodyParser.json());
+//console.log(bodyParser.json());
 
-
+console.log("IN APP.JS");
 
 
 app.use(bodyParser.json());
@@ -33,6 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/oneschool', oneschool);
 app.use('/schools', schools);
 
 console.log("IN APP.JS");

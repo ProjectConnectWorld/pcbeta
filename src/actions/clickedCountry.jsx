@@ -130,7 +130,7 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
         if (totalconnectedschools / schoolcount > .3) {
           showSpeed = true;
         }
-        // Using a reducer to dispatch the payload 
+        // Using a reducer to dispatch the payload
         dispatch({
           type: 'COUNTRY_FETCHED',
           payload: {
@@ -151,7 +151,6 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
             b_2gconn: b_2gconn,
             b_3gconn: b_3gconn,
             b_noData: b_noData,
-
           }
         })
         dispatch({

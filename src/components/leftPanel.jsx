@@ -135,7 +135,7 @@ class LeftPanel extends Component {
                 contact <a href= "mailto:info@projectconnect.world?Subject=More%20Information">  Project Connect </a> to learn more.
               </p>
               <p>
-                <h4>Navigating this map</h4>
+                <h4>Navigating this map:</h4>
                 This map brings together a wide range of data, including school location and other key attributes as well as information
                 on school Internet connectivity, both in terms of speed (Mbs) and type (2G and 3G). Click on a country to see what
                 information is currently available and on individual dots to find out more details for a particular school.
@@ -145,9 +145,12 @@ class LeftPanel extends Component {
               countries indicate that we have both school location and Internet connectivity data.</p>
               <p><span>&#8226;</span><strong>Light yellow </strong> countries indicates that we
               only have school location information.</p>
+              <h4>Note:</h4>
+              <p> Not all data has been independently verified. We also only have partial data for some countries and are looking for your help to continue filling out this map.</p>
+
             </Modal.Body>
             <Modal.Footer>
-              <p><strong>*NOTE*</strong>  Not all data has been independently verified. We also only have partial data for some countries and are looking for your help to continue filling out this map.</p>
+              <Button bsStyle="warning" onClick={this.handleToggle.bind(this)}>Accept</Button>
             </Modal.Footer>
 
           </Modal>

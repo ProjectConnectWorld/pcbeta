@@ -24,6 +24,9 @@ import {
 import {
   ClickedCountry
 } from '../actions/clickedCountry';
+import {
+  ClickedSchool
+} from '../actions/clickedSchool';
 // import {
 //   ClickedCountry2
 // } from '../actions/clickedCountry2';
@@ -64,17 +67,20 @@ class SimpleExample extends Component {
         return "#5cb85c";
       } else if (value < this.props.sliderData.value) {
         return "#F5A623";
+      }else{
+        return "#DCDCDC";
       }
     } else {
-      //console.log("GGGS");
       if (type === null) {
-        return "#DCDCDC";
+        return "#6A1E74";
       } else if (type === "No Service") {
         return "#d9534f";
       } else if (type === "3G") {
         return "#5cb85c";
       } else if (type === "2G") {
         return "#F5A623";
+      }else{
+        return "#DCDCDC";
       }
 
 
@@ -319,21 +325,33 @@ class SimpleExample extends Component {
 
 
   pointToLayer = (feature, latlng) => {
-    // console.log(feature.properties);
-    // return L.rectangle(squareHelper(latlng, .05), {
-    //   color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
-    //   fillColor: this.getStyle(feature.properties.speed_connectivity),
-    //   fillOpacity: .8,
-    //   stroke: false
-    // }).bindPopup(popUpString(feature.properties));
-    return L.circleMarker(latlng, {
-      color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
-      fillColor: this.getStyle(feature.properties.speed_connectivity),
-      fillOpacity: .8,
-      radius: 3,
-      stroke: false
-    }).bindPopup(popUpString(feature.properties)); // Change marker to circle
-  }
+    if(feature.properties.probe_id){
+      //console.log(feature.properties);
+      return L.rectangle(squareHelper(latlng, .05), {
+        color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
+        fillColor: this.getStyle(feature.properties.speed_connectivity,feature.properties.type_connectivity),
+        fillOpacity: .8,
+        stroke: false
+      }).bindPopup(popUpString(feature.properties)).on({
+        'click': (e) => {
+          console.log("YOU CLICKED");
+          this.props.clickedSchool(feature.properties.probe_id)
+        }
+      });;
+
+    }else{
+      return L.circleMarker(latlng, {
+        color: this.getStyle(feature.properties.speed_connectivity, feature.properties.type_connectivity),
+        fillColor: this.getStyle(feature.properties.speed_connectivity,feature.properties.type_connectivity),
+        fillOpacity: .8,
+        radius: 3,
+        stroke: false
+      }).bindPopup(popUpString(feature.properties))// Change marker to circle
+    }
+
+    }
+
+
 
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -520,6 +538,7 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     clickedCountry: ClickedCountry,
+    clickedSchool: ClickedSchool,
     sliderChanged: SliderChanged,
     loadSpinner: LoadSpinner
   }, dispatch)

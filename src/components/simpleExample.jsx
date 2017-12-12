@@ -203,19 +203,12 @@ class SimpleExample extends Component {
     }
     layer.on({
       'mouseover': (e) => {
-        if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
-          layer.setStyle({
-            fillColor: "#F5A623",
-            fillOpacity: 0.8
-          });
+        layer.setStyle({
+          fillColor: "#F5A623",
+          fillOpacity: 0.8
+        });
 
-        }
-        if (this.props.countrySelected.country === alpha2) {
-          layer.setStyle({
-            fillOpacity: 0
-          });
 
-        }
 
       },
       'mouseout': (e) => {
@@ -424,7 +417,7 @@ class SimpleExample extends Component {
               pointToLayer={this.pointToLayer.bind(this)}
               filter = {this.pointFilter.bind(this)}
             ></GeoJSON>
-            </Map>
+          </Map>
 
         )
 

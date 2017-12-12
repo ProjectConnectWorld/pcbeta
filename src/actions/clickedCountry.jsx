@@ -22,12 +22,13 @@ export function ClickedCountry(country, sliderVal, admin1, admin1L) {
   return function(dispatch) {
     console.log('About to fetch', country + extra);
     axios.defaults.withCredentials = true;
-    axios.get('/schools/countries/' + country + extra)
+    console.log(window.location.href);
+    axios.get(window.location.href +'/schools/countries/' + country + extra)
       .catch(err => {
         alert('There was an error trying to fetch. Please check your internet connection', country)
       })
       .then(response => {
-
+        console.log(response);
         var countryname = iso3311a2.getCountry(country)
         var newGeo = null;
         var geojson = null;

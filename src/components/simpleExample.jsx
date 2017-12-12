@@ -207,10 +207,7 @@ class SimpleExample extends Component {
            layer.setStyle({
              fillOpacity: 0.8
            });
-
-
-
-
+        }
       },
       'mouseout': (e) => {
         var alpha2 = alpha3ToAlpha2(feature.id);

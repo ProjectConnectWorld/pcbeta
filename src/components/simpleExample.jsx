@@ -203,10 +203,11 @@ class SimpleExample extends Component {
     }
     layer.on({
       'mouseover': (e) => {
-        layer.setStyle({
-          fillColor: "#F5A623",
-          fillOpacity: 0.8
-        });
+        if (this.props.countrySelected.country !== alpha2 && (allCountries.indexOf(alpha2) > -1)) {
+           layer.setStyle({
+             fillOpacity: 0.8
+           });
+
 
 
 
